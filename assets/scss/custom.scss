@@ -1,0 +1,15 @@
+/*
+ * Add a custom CSS file at /assets/css/custom.css
+ * to avoid overwriting theme files on update.
+ */
+
+.navbar-logo-text {
+  font-size: 1.2rem; /* Adjust font size as needed */
+  margin-left: 0.5rem; /* Space between logo and text */
+  white-space: nowrap; /* Prevents text from wrapping to a new line */
+}
+
+/* Optional: Adjust vertical alignment */
+.navbar-brand img, .navbar-logo-text {
+  vertical-align: middle;
+}

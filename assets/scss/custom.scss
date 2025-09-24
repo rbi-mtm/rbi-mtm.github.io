@@ -13,3 +13,18 @@
 .navbar-brand img, .navbar-logo-text {
   vertical-align: middle;
 }
+
+.full-width-bg {
+    background-color: #f0f0f0; /* Use your desired color or image */
+    display: flex;
+    align-items: center; /* Vertically center the content */
+    min-height: 20px;       /* adjust as needed */
+}
+
+.full-width-bg .universal-wrapper {
+  display: flex;
+  text-align: center;
+  padding-top: 0em;
+  padding-bottom: 0em;
+  margins: 0 0px;
+}

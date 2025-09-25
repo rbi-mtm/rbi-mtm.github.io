@@ -15,7 +15,7 @@ authors:
 - Shixun Wang
 - Pei-Ying You
 - Hyeyoung Ahn
-- Ivor Loncaric
+- iloncaric
 - ' others'
 
 # Author notes (such as 'Equal Contribution')

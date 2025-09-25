@@ -23,7 +23,7 @@ organizations:
     url: 'https://www.irb.hr/eng/Divisions/Division-of-Theoretical-Physics/Condensed-Matter-and-Statistical-Physics/Employees/Juraj-Ovcar'
 
 # Short bio (displayed in user profile at end of posts)
-bio: Likes git.
+bio:
 
 interests:
   - Condensed Matter Physics

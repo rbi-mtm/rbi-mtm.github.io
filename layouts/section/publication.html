@@ -1,9 +1,12 @@
 {{- define "main" -}}
 
-{{/* Require Isotope */}}
 {{ $.Page.Store.Set "has_isotope" true }}
-
 {{ partial "page_header.html" . }}
+
+{{/* --- Note box --- */}}
+<div class="alert-note" style="background-color: #fffae6; border-left: 4px solid #ffc107; padding: 15px; margin-bottom: 20px; border-radius: 5px;">
+  <strong>Note:</strong> We are in the process of adding past publications.
+</div>
 
 <div class="universal-wrapper">
   <div class="row">
@@ -13,32 +16,65 @@
       <div class="article-style">{{ . }}</div>
       {{ end }}
 
-	  <br>
+      <br>
 
-      {{/* Array of distinct years. */}}
-      {{ range .Pages.ByDate.Reverse }}
-        {{ $year := print (.Date.Format "2006") }}
-        {{ $.Scratch.SetInMap "years" $year $year }}
+      {{/* --- Display Preprints --- */}}
+      {{ $preprints := where $.Pages.ByDate.Reverse "Params.preprint" true }}
+      {{ if gt (len $preprints) 0 }}
+        <h1>Preprints</h1>
+        <hr>
+        {{ range $index, $item := $preprints }}
+          {{ if $item.Params.publication_types }}
+            {{ $.Scratch.Set "pubtype" (index $item.Params.publication_types 0) }}
+          {{ else }}
+            {{ $.Scratch.Set "pubtype" 0 }}
+          {{ end }}
+
+          <div class="grid-sizer col-lg-12 isotope-item pubtype-{{ $.Scratch.Get "pubtype" }} preprint">
+            {{ partial "functions/render_view" (dict "page" $ "item" $item "view" ($.Params.view | default "compact") "index" $index) }}
+          </div>
+        {{ end }}
       {{ end }}
 
-      <div id="container-publications">
-        {{ range $index, $item := .Pages.ByDate.Reverse }}
+      <br>
 
-        {{ if .Params.publication_types }}
-          {{ $.Scratch.Set "pubtype" (index .Params.publication_types 0) }}
-        {{ else }}
-          {{ $.Scratch.Set "pubtype" 0 }}
+      {{/* --- Collect distinct years for non-preprints --- */}}
+      {{ $.Scratch.Set "years" (slice) }}
+      {{ range $.Pages.ByDate.Reverse }}
+        {{ if not .Params.preprint }}
+          {{ $year := .Date.Format "2006" }}
+          {{ if not (in ($.Scratch.Get "years") $year) }}
+            {{ $.Scratch.Add "years" (slice $year) }}
+          {{ end }}
+        {{ end }}
+      {{ end }}
+
+      {{/* --- Loop through each year for non-preprints --- */}}
+      {{ range $year := $.Scratch.Get "years" }}
+        <h1>{{ $year }}</h1>
+        <hr>
+
+        {{ range $index, $item := $.Pages.ByDate.Reverse }}
+          {{ if and (eq ($item.Date.Format "2006") $year) (not $item.Params.preprint) }}
+
+            {{ if $item.Params.publication_types }}
+              {{ $.Scratch.Set "pubtype" (index $item.Params.publication_types 0) }}
+            {{ else }}
+              {{ $.Scratch.Set "pubtype" 0 }}
+            {{ end }}
+
+            <div class="grid-sizer col-lg-12 isotope-item pubtype-{{ $.Scratch.Get "pubtype" }} year-{{ $item.Date.Format "2006" }}">
+              {{ partial "functions/render_view" (dict "page" $ "item" $item "view" ($.Params.view | default "compact") "index" $index) }}
+            </div>
+
+          {{ end }}
         {{ end }}
 
-        <div class="grid-sizer col-lg-12 isotope-item pubtype-{{ $.Scratch.Get "pubtype" }} year-{{ .Date.Format "2006" }}">
-          {{ partial "functions/render_view" (dict "page" $ "item" . "view" ($.Params.view | default "compact") "index" $index) }}
-        </div>
-
-        {{ end }}
-      </div>
+      {{ end }}
 
     </div>
   </div>
 </div>
 
 {{- end -}}
+

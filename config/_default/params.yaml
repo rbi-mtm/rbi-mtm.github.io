@@ -41,8 +41,9 @@ header:
     show_day_night: true
     show_search: true
     highlight_active_link: true
-#  logo:
-#    filename: "logo.svg"
+  logo:
+    text:
+    filename: "logo.svg"
 
 # Site footer
 

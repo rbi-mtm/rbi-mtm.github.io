@@ -1,7 +1,7 @@
 {{ $item := .item }}
 {{ $has_attachments := partial "functions/has_attachments" $item }}
 
-<div class="pub-list-item view-citation" style="margin-bottom: 1rem; background-color: #f0f0f0; padding: 1rem; border: 0.1rem solid black">
+<div class="pub-list-item view-citation" style="margin-bottom: 1rem; background-color: #f0f0f0; padding: 1rem; border: 0.01rem solid black; border-radius: 0.5rem">
 
   {{/* APA Style */}}
   {{ if eq (site.Params.publications.citation_style | default "apa") "apa" }}

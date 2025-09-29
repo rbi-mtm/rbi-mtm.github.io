@@ -32,7 +32,7 @@ sections:
       order: desc
       page_type: post
     design:
-      view: compact
+      view: compact_grey
       columns: '1'
   
 #  - block: markdown
@@ -55,18 +55,17 @@ sections:
 #        padding: ['20px', '0', '20px', '0']
 #      css_class: fullscreen
 
-  - block: collection
-    content:
-      title: Latest Publications
-      text: ""
-      count: 5
-      filters:
-        folders:
-          - publication
-        publication_type: 'article'
-    design:
-      view: citation
-      columns: '1'
+#  - block: collection
+#    content:
+#      title: Latest Publications
+#      text: <br>
+#      count: 5
+#      filters:
+#        folders:
+#          - publication
+#    design:
+#      view: compact_grey
+#      columns: '1'
 
 #  - block: markdown
 #    content:

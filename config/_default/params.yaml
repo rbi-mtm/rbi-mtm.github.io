@@ -9,7 +9,7 @@ appearance:
   mode: light
   theme_day: Ocean
   theme_night:
-  font: Minimal
+  font: Fira
   font_size: L
 
 # SEO
@@ -41,8 +41,8 @@ header:
     show_day_night: true
     show_search: true
     highlight_active_link: true
-  logo:
-    filename: "logo.svg"
+#  logo:
+#    filename: "logo.svg"
 
 # Site footer
 

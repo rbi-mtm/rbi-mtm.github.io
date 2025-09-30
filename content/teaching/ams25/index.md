@@ -34,9 +34,10 @@ More details are given below:
 ---
 
 The school will be held on three Wednesdays in December:
-- $\text{December}$ $ 3^{\text{rd}}\ \ $  $2025$;   $\ \ 09:00 - 17:00$
--  $\text{December}$ $10^{\text{th}}$ $2025$;   $\ \ 09:00 - 17:00$
-- $\text{December}$ $17^{\text{th}}$  $2025$;   $\ \ 09:00 - 17:00$
+
+- $\text{December}$ $ 3^{\text{rd}}\ \ $  $2025$,   $\ \ 09:00 - 17:00$
+-  $\text{December}$ $10^{\text{th}}$ $2025$,   $\ \ 09:00 - 17:00$
+- $\text{December}$ $17^{\text{th}}$  $2025$,   $\ \ 09:00 - 17:00$
 
 in the **lecture hall** of the [**Institute of Physics**](https://maps.app.goo.gl/SigjffQmq9kXdW2n9) (Zagreb, Croatia). Detailed instructions on how to enter the Institute and arrive to the hall will be added.
 
@@ -45,7 +46,7 @@ in the **lecture hall** of the [**Institute of Physics**](https://maps.app.goo.g
 
 Take a couple of minutes and apply: [**Click here to open the application form**](https://forms.gle/zzKY9goW9B85c6m78).
 
-The application deadline is $\textbf{November } \bf{9}^{\textbf{th}}\ 2025;\ 23:59$.
+The application deadline is $\textbf{November } \bf{9}^{\textbf{th}}\ 2025,\ 23:59$.
 
 School attendance is **free** for all attendants.
 

@@ -10,3 +10,10 @@ banner:
   image: ''
   text: ''
 ---
+
+{{% callout warning %}}
+We are still writing a summary of research activities in our group.
+
+For now, you can check the [Publications](/publications) or the [People](/people) section for more information.
+{{% /callout %}}
+

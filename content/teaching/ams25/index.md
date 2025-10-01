@@ -3,13 +3,24 @@ title: Atomistic Modelling School 2025 @ Zagreb
 
 abstract: 'An introduction to atomistic modelling of materials.'
 
-date: '2025-09-30'
+date: '2025-10-01'
 
 image:
   caption: 
   focal_point: Right
-
 ---
+
+## Table of Contents
+---
+
+ 1. [Introduction](#introduction)
+ 2. [Time & Location](#time--location)
+ 3. [Application](#application)
+ 4. [Schedule](#schedule)
+ 5. [Scope & Format](#scope--format)
+ 6. [Hands-on Sessions](#hands-on-sessions)
+ 7. [Organization](#organization)
+ 8. [Resources](#resources)
 
 # Introduction
 ---
@@ -26,9 +37,8 @@ The primary intended audience for the school are **undergraduate students**; the
 More details are given below:
 
 - [**Apply to the school**](#application)
-- [Scope and format](#scope--format) of the school
 - [Schedule](#schedule)
-
+- [Scope and format](#scope--format) of the school
 
 # Time & Location
 ---
@@ -48,7 +58,11 @@ Take a couple of minutes and apply: [**Click here to open the application form**
 
 The application deadline is **November 9 2025, 23:59**.
 
-School attendance is **free** for all attendants.
+School attendance is **free** for all participants.
+
+# Schedule
+---
+The schedule will be announced soon.
 
 # Scope & Format
 ---
@@ -65,19 +79,54 @@ being comparable to experiments.
 
 It is the aim of this school to introduce some such methods
 and contextualize them within modern science, so that the
-attendees gain a broad perspective on the state of the art
+participants gain a broad perspective on the state of the art
 of **computational materials science** and are able to
 more easily continue learning.
 
 The topics covered by the school include:
 
 - An introduction to [crystallography](https://en.wikipedia.org/wiki/Crystal_structure)
-- [Density functional theory](https://en.wikipedia.org/wiki/Density_functional_theory)
-- [Classical interatomic potentials](https://en.wikipedia.org/wiki/Interatomic_potential)
-- [Molecular dynamics](https://en.wikipedia.org/wiki/Molecular_dynamics)
-- Guiding and understanding experiments via simulations
-- more to be added...
+- [Density functional theory](https://arxiv.org/abs/cond-mat/0211443)
+- Phonons and electron-phonon coupling
+- [Molecular dynamics](https://tinyurl.com/p9w94vmv)
+- [Machine learning in materials science](https://www.sciencedirect.com/science/article/pii/S135902862400055X)
+- A practical perspective on guiding and explaining experiments via simulations
 
-# Schedule
+Gaining a comprehensive understanding of different methodologies requires
+both an understanding of theoretical foundations and a certain level of practical experience.
+Therefore, each day of **AMS25** will consist of **3 theoretical lectures** in the morning,
+followed by **3 hands-on sessions** in the afternoon.
+
+Read about the [hands-on sessions](#hands-on-sessions) and check the [schedule](#schedule) for more details.
+
+We will also organize an **open panel discussion** about working in computational materials science.
+
+# Hands-on sessions
 ---
-The schedule will be added soon.
+
+Before the school, we will provide each participant with a [virtual machine](https://en.wikipedia.org/wiki/Virtual_machine) (VM),
+containing all the software necessary to follow the hands-on sessions.
+
+The participants will then be able to execute all exercies on their own laptops.
+
+{{% callout note %}}
+To participate in the hands-on sessions,
+you need to bring your own laptop. If you do not have a laptop and wish
+to attend the hands-on sessions, send an email to <Juraj.Ovcar@irb.hr>.
+{{% /callout %}}
+
+
+
+# Organization
+---
+
+**AMS25** is organized by the members of the [**Modelling and Theory of Materials Group**](/people)
+at the [Ruđer Bošković institute](https://www.irb.hr/eng).
+
+We are grateful to the [Institute of Physics](https://ifs.hr/) for providing the lecture hall for the school.
+
+# Resources
+---
+
+- [Other schools and workshops organized by our group](/teaching)
+

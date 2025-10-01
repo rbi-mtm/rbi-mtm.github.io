@@ -21,6 +21,7 @@ image:
  6. [Hands-on Sessions](#hands-on-sessions)
  7. [Organization](#organization)
  8. [Resources](#resources)
+ 9. [Contact](#contact)
 
 # Introduction
 ---
@@ -39,6 +40,7 @@ More details are given below:
 - [**Apply to the school**](#application)
 - [Schedule](#schedule)
 - [Scope and format](#scope--format) of the school
+
 
 # Time & Location
 ---
@@ -128,3 +130,7 @@ We are grateful to the [Institute of Physics](https://ifs.hr/) for providing the
 
 - [Other schools and workshops organized by our group](/teaching)
 
+# Contact
+---
+
+For additional questions, send an email to <Juraj.Ovcar@irb.hr>.

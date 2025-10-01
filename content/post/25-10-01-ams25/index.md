@@ -1,9 +1,9 @@
 ---
-title: We are organizing the Atomistic Modelling School 2025 in Zagreb!
+title: We are organizing the Atomistic Modelling School 2025!
 date: 2025-10-01
 ---
 
-We're organizing a 3-day school in atomistic modelling of materials.
+We're organizing a 3-day school in atomistic modelling of materials in Zagreb, Croatia.
 
 <!--more-->
 

@@ -107,15 +107,13 @@ We will also organize an **open panel discussion** about working in computationa
 Before the school, we will provide each participant with a [virtual machine](https://en.wikipedia.org/wiki/Virtual_machine) (VM),
 containing all the software necessary to follow the hands-on sessions.
 
-The participants will then be able to execute all exercies on their own laptops.
+The participants will then be able to execute all exercises on their own laptops.
 
 {{% callout note %}}
 To participate in the hands-on sessions,
 you need to bring your own laptop. If you do not have a laptop and wish
 to attend the hands-on sessions, send an email to <Juraj.Ovcar@irb.hr>.
 {{% /callout %}}
-
-
 
 # Organization
 ---

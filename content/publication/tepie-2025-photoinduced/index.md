@@ -1,5 +1,5 @@
 ---
-title: Photoinduced Frustration Modulation in $\kappa$-type Quantum Spin Liquid Candidates
+title: Photoinduced frustration modulation in $kappa$-type quantum spin liquid candidates
 authors:
 - M Tepie
 - F Glerean
@@ -11,11 +11,10 @@ authors:
 - iloncaric
 - M Dressel
 - M Mitrano
-date: '2025-08-19'
-publishDate: '2025-09-29T19:45:06.623108Z'
+date: '2025-10-08'
+publishDate: '2025-10-21T07:19:39.955586Z'
 publication_types:
 - article-journal
-publication: '*arXiv preprint arXiv:2508.14034*'
-doi: 'https://arxiv.org/abs/2508.14034'
-preprint: true
+publication: '*Physical Review B*'
+doi: 'https://doi.org/10.1103/clxp-z2g5'
 ---

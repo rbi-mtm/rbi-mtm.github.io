@@ -121,9 +121,7 @@ to attend the hands-on sessions, send an email to <Juraj.Ovcar@irb.hr>.
 ---
 
 **AMS25** is organized by the members of the [**Modelling and Theory of Materials Group**](/people)
-at the [Ruđer Bošković institute](https://www.irb.hr/eng).
-
-We are grateful to the [Institute of Physics](https://ifs.hr/) for providing the lecture hall for the school.
+at the [Ruđer Bošković institute](https://www.irb.hr/eng) in collaboration with the [Institute of Physics](https://ifs.hr).
 
 # Resources
 ---

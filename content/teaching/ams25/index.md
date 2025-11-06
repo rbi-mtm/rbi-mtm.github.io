@@ -93,7 +93,7 @@ School attendance is **free** for all participants.
     <tr style="background-color:#ffffff; transition: background 0.2s;" onmouseover="this.style.backgroundColor='#f0f8ff';" onmouseout="this.style.backgroundColor='#ffffff';">
       <td style="padding:10px; vertical-align: middle;">9:00</td>
       <td style="padding:10px; vertical-align: middle;">9:55</td>
-      <td style="background-color:#D9EAF7; padding:10px; vertical-align: middle;"><strong>Ivor Lončarić</strong><br>Opening / General Introduction</td>
+      <td style="background-color:#D9EAF7; padding:10px; vertical-align: middle;"><strong>Ivor Lončarić</strong><br>Opening / General Introduction to Atomistic Simulations</td>
       <td style="background-color:#D9EAF7; padding:10px; vertical-align: middle;"><strong>Dino Novko</strong><br>Phonons, Electrons and Electron-Phonon Coupling</td>
       <td style="background-color:#D9EAF7; padding:10px; vertical-align: middle;"><strong>Dino Novko</strong><br>Comparing <em>Ab Initio</em> Simulations with Experiments</td>
     </tr>

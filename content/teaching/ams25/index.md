@@ -7,7 +7,7 @@ date: '2025-10-01'
 
 image:
   caption: 
-  focal_point: Right
+  placement: 2
 ---
 
 ## Table of Contents
@@ -64,7 +64,113 @@ School attendance is **free** for all participants.
 
 # Schedule
 ---
-The schedule will be announced soon.
+
+<table style="border-collapse: collapse; width: 100%; table-layout: fixed;  text-align: center; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+  <colgroup>
+    <col style="width: 10%;">
+    <col style="width: 10%;">
+    <col style="width: 26.66%; border-left: 1px solid #ddd;">
+    <col style="width: 26.66%; border-left: 1px solid #ddd;">
+    <col style="width: 26.66%; border-left: 1px solid #ddd;">
+  </colgroup>
+  <thead>
+    <tr style="background-color:#ffffff; color:#333; height:50px; font-weight:bold; text-transform: uppercase;">
+      <th style="border-bottom: 3px solid #ccc; padding:12px; vertical-align: middle;">Start</th>
+      <th style="border-bottom: 3px solid #ccc; padding:12px; vertical-align: middle;">End</th>
+      <th style="border-bottom: 3px solid #ccc; padding:12px; vertical-align: middle;">3.12.</th>
+      <th style="border-bottom: 3px solid #ccc; padding:12px; vertical-align: middle;">10.12.</th>
+      <th style="border-bottom: 3px solid #ccc; padding:12px; vertical-align: middle;">17.12.</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr style="background-color:#ffffff; transition: background 0.2s;" onmouseover="this.style.backgroundColor='#f0f8ff';" onmouseout="this.style.backgroundColor='#ffffff';">
+      <td style="padding:10px; vertical-align: middle;">8:30</td>
+      <td style="padding:10px; vertical-align: middle;">9:00</td>
+      <td style="background-color:#D8BCE8; padding:10px; vertical-align: middle;"><strong>Registration</strong></td>
+      <td style="background-color:#f9f9f9; color:#bbb; padding:10px; vertical-align: middle;">-</td>
+      <td style="background-color:#f9f9f9; color:#bbb; padding:10px; vertical-align: middle;">-</td>
+    </tr>
+    <tr style="background-color:#ffffff; transition: background 0.2s;" onmouseover="this.style.backgroundColor='#f0f8ff';" onmouseout="this.style.backgroundColor='#ffffff';">
+      <td style="padding:10px; vertical-align: middle;">9:00</td>
+      <td style="padding:10px; vertical-align: middle;">9:55</td>
+      <td style="background-color:#D9EAF7; padding:10px; vertical-align: middle;"><strong>Ivor Lončarić</strong><br>Opening / General Introduction</td>
+      <td style="background-color:#D9EAF7; padding:10px; vertical-align: middle;"><strong>Dino Novko</strong><br>Phonons, Electrons and Electron-Phonon Coupling</td>
+      <td style="background-color:#D9EAF7; padding:10px; vertical-align: middle;"><strong>Dino Novko</strong><br>Comparing <em>Ab Initio</em> Simulations with Experiments</td>
+    </tr>
+    <tr style="background-color:#ffffff; transition: background 0.2s;" onmouseover="this.style.backgroundColor='#f0f8ff';" onmouseout="this.style.backgroundColor='#ffffff';">
+      <td style="padding:10px; vertical-align: middle;">9:55</td>
+      <td style="padding:10px; vertical-align: middle;">10:25</td>
+      <td style="background-color:#FFF9C4; padding:10px; vertical-align: middle;">Coffee Break</td>
+      <td style="background-color:#FFF9C4; padding:10px; vertical-align: middle;">Coffee Break</td>
+      <td style="background-color:#FFF9C4; padding:10px; vertical-align: middle;">Coffee Break</td>
+    </tr>
+    <tr style="background-color:#ffffff; transition: background 0.2s;" onmouseover="this.style.backgroundColor='#f0f8ff';" onmouseout="this.style.backgroundColor='#ffffff';">
+      <td style="padding:10px; vertical-align: middle;">10:25</td>
+      <td style="padding:10px; vertical-align: middle;">11:20</td>
+      <td style="background-color:#D9EAF7; padding:10px; vertical-align: middle;"><strong>Luka Benić</strong><br>Fundamentals of DFT</td>
+      <td style="background-color:#D9EAF7; padding:10px; vertical-align: middle;"><strong>Ryan Requist</strong><br><em>Ab Initio</em> Molecular Dynamics</td>
+      <td style="background-color:#D9EAF7; padding:10px; vertical-align: middle;"><strong>Ivor Lončarić</strong><br>Machine learning in Materials Science</td>
+    </tr>
+    <tr style="background-color:#ffffff; transition: background 0.2s;" onmouseover="this.style.backgroundColor='#f0f8ff';" onmouseout="this.style.backgroundColor='#ffffff';">
+      <td style="padding:10px; vertical-align: middle;">11:20</td>
+      <td style="padding:10px; vertical-align: middle;">11:25</td>
+      <td style="background-color:#FFF9C4; padding:10px; vertical-align: middle;">Break</td>
+      <td style="background-color:#FFF9C4; padding:10px; vertical-align: middle;">Break</td>
+      <td style="background-color:#FFF9C4; padding:10px; vertical-align: middle;">Break</td>
+    </tr>
+    <tr style="background-color:#ffffff; transition: background 0.2s;" onmouseover="this.style.backgroundColor='#f0f8ff';" onmouseout="this.style.backgroundColor='#ffffff';">
+      <td style="padding:10px; vertical-align: middle;">11:25</td>
+      <td style="padding:10px; vertical-align: middle;">12:20</td>
+      <td style="background-color:#D9EAF7; padding:10px; vertical-align: middle;"><strong>Miha Gunde</strong><br>Intro to Crystallography & Atomistic Simulations</td>
+      <td style="background-color:#D9EAF7; padding:10px; vertical-align: middle;"><strong>Bernhard Kretz</strong><br>Theory and Modelling of Electronic Transport</td>
+      <td style="background-color:#DFF2D8; padding:10px; vertical-align: middle;"><strong>Bernhard Kretz</strong><br>Hands-on Session #1</td>
+    </tr>
+    <tr style="background-color:#ffffff; transition: background 0.2s;" onmouseover="this.style.backgroundColor='#f0f8ff';" onmouseout="this.style.backgroundColor='#ffffff';">
+      <td style="padding:10px; vertical-align: middle;">12:20</td>
+      <td style="padding:10px; vertical-align: middle;">13:50</td>
+      <td style="background-color:#FFF9C4; padding:10px; vertical-align: middle;">Lunch</td>
+      <td style="background-color:#FFF9C4; padding:10px; vertical-align: middle;">Lunch</td>
+      <td style="background-color:#FFF9C4; padding:10px; vertical-align: middle;">Lunch</td>
+    </tr>
+    <tr style="background-color:#ffffff; transition: background 0.2s;" onmouseover="this.style.backgroundColor='#f0f8ff';" onmouseout="this.style.backgroundColor='#ffffff';">
+      <td style="padding:10px; vertical-align: middle;">13:50</td>
+      <td style="padding:10px; vertical-align: middle;">14:40</td>
+      <td style="background-color:#DFF2D8; padding:10px; vertical-align: middle;"><strong>Miha Gunde</strong><br>Hands-on Session #1</td>
+      <td style="background-color:#DFF2D8; padding:10px; vertical-align: middle;"><strong>Juraj Ovčar</strong><br>Hands-on Session #1</td>
+      <td style="background-color:#DFF2D8; padding:10px; vertical-align: middle;"><strong>Bernhard Kretz</strong><br>Hands-on Session #2</td>
+    </tr>
+    <tr style="background-color:#ffffff; transition: background 0.2s;" onmouseover="this.style.backgroundColor='#f0f8ff';" onmouseout="this.style.backgroundColor='#ffffff';">
+      <td style="padding:10px; vertical-align: middle;">14:40</td>
+      <td style="padding:10px; vertical-align: middle;">15:10</td>
+      <td style="background-color:#FFF9C4; padding:10px; vertical-align: middle;">Coffee Break</td>
+      <td style="background-color:#FFF9C4; padding:10px; vertical-align: middle;">Coffee Break</td>
+      <td style="background-color:#FFF9C4; padding:10px; vertical-align: middle;">Coffee Break</td>
+    </tr>
+    <tr style="background-color:#ffffff; transition: background 0.2s;" onmouseover="this.style.backgroundColor='#f0f8ff';" onmouseout="this.style.backgroundColor='#ffffff';">
+      <td style="padding:10px; vertical-align: middle;">15:10</td>
+      <td style="padding:10px; vertical-align: middle;">16:00</td>
+      <td style="background-color:#DFF2D8; padding:10px; vertical-align: middle;"><strong>Miha Gunde</strong><br>Hands-on Session #2</td>
+      <td style="background-color:#DFF2D8; padding:10px; vertical-align: middle;"><strong>Juraj Ovčar</strong><br>Hands-on Session #2</td>
+      <td style="background-color:#DFF2D8; padding:10px; vertical-align: middle;"><strong>Bernhard Kretz</strong><br>Hands-on Session #3</td>
+    </tr>
+    <tr style="background-color:#ffffff; transition: background 0.2s;" onmouseover="this.style.backgroundColor='#f0f8ff';" onmouseout="this.style.backgroundColor='#ffffff';">
+      <td style="padding:10px; vertical-align: middle;">16:00</td>
+      <td style="padding:10px; vertical-align: middle;">16:05</td>
+      <td style="background-color:#FFF9C4; padding:10px; vertical-align: middle;">Break</td>
+      <td style="background-color:#FFF9C4; padding:10px; vertical-align: middle;">Break</td>
+      <td style="background-color:#FFF9C4; padding:10px; vertical-align: middle;">Break</td>
+    </tr>
+    <tr style="background-color:#ffffff; transition: background 0.2s;" onmouseover="this.style.backgroundColor='#f0f8ff';" onmouseout="this.style.backgroundColor='#ffffff';">
+      <td style="padding:10px; vertical-align: middle;">16:05</td>
+      <td style="padding:10px; vertical-align: middle;">17:00</td>
+      <td style="background-color:#DFF2D8; padding:10px; vertical-align: middle;"><strong>Miha Gunde</strong><br>Hands-on Session #3</td>
+      <td style="background-color:#DFF2D8; padding:10px; vertical-align: middle;"><strong>Juraj Ovčar</strong><br>Hands-on Session #3</td>
+      <td style="background-color:#A2F5EE; padding:10px; vertical-align: middle;"><strong>Panel Discussion</strong></td>
+    </tr>
+  </tbody>
+</table>
+
+<br>
 
 # Scope & Format
 ---

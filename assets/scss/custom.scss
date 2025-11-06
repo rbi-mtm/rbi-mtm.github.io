@@ -33,3 +33,12 @@
   text-align: justify;
   font-size: 0.90rem; /* Slightly smaller than normal */
 }
+
+/* Widen article content */
+.article-container {
+  max-width: 1300px; /* or try 100% if you want full width */
+}
+
+.article-style {
+  max-width: 1200px;
+}

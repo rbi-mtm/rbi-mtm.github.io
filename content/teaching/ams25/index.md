@@ -70,7 +70,7 @@ School attendance is **free** for all participants.
 ---
 <div style="overflow-x: auto; border-radius: 12px;">
 
-<table style="border-collapse: collapse; width: 100%; table-layout: fixed;  text-align: center; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+  <table style="border-collapse: collapse; width: 100%; min-width: 600px; text-align: center; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
   <colgroup>
     <col style="width: 10%;">
     <col style="width: 10%;">

@@ -56,14 +56,19 @@ in the **lecture hall** of the [**Institute of Physics**](https://maps.app.goo.g
 # Application
 ---
 
-Take a couple of minutes and apply: [**Click here to open the application form**](https://forms.gle/zzKY9goW9B85c6m78).
+~~Take a couple of minutes and apply: [**Click here to open the application form**](https://forms.gle/zzKY9goW9B85c6m78).~~
 
-The application deadline is **November 9 2025, 23:59**.
+~~The application deadline is **November 9 2025, 23:59**.~~
+
+**The applications are closed!**
+
+We thank all who applied for their time and interest. We will soon contact the applicants with our decision.
 
 School attendance is **free** for all participants.
 
 # Schedule
 ---
+<div style="overflow-x: auto; border-radius: 12px;">
 
 <table style="border-collapse: collapse; width: 100%; table-layout: fixed;  text-align: center; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
   <colgroup>
@@ -171,6 +176,7 @@ School attendance is **free** for all participants.
 </table>
 
 <br>
+</div>
 
 # Scope & Format
 ---

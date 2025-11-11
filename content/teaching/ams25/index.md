@@ -51,7 +51,7 @@ The school will be held on three Wednesdays in December:
 - December 10 2025, 09:00 - 17:00
 - December 17 2025, 09:00 - 17:00
 
-in the **lecture hall** of the [**Institute of Physics**](https://maps.app.goo.gl/SigjffQmq9kXdW2n9) (Zagreb, Croatia). Detailed instructions on how to enter the Institute and arrive to the hall will be added.
+in the **lecture hall** of the [**Institute of Physics**](https://maps.app.goo.gl/SigjffQmq9kXdW2n9) (Zagreb, Croatia).
 
 # Application
 ---
@@ -112,7 +112,7 @@ School attendance is **free** for all participants.
     <tr style="background-color:#ffffff; transition: background 0.2s;" onmouseover="this.style.backgroundColor='#f0f8ff';" onmouseout="this.style.backgroundColor='#ffffff';">
       <td style="padding:10px; vertical-align: middle;">10:25</td>
       <td style="padding:10px; vertical-align: middle;">11:20</td>
-      <td style="background-color:#D9EAF7; padding:10px; vertical-align: middle;"><strong>Luka Benić</strong><br>Fundamentals of DFT</td>
+      <td style="background-color:#D9EAF7; padding:10px; vertical-align: middle;"><strong>Luka Benić</strong><br>Fundamentals of Density Functional Theory</td>
       <td style="background-color:#D9EAF7; padding:10px; vertical-align: middle;"><strong>Ryan Requist</strong><br><em>Ab Initio</em> Molecular Dynamics</td>
       <td style="background-color:#D9EAF7; padding:10px; vertical-align: middle;"><strong>Ivor Lončarić</strong><br>Machine Learning in Materials Science</td>
     </tr>

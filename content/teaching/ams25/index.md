@@ -218,10 +218,10 @@ We will also organize an **open panel discussion** about working in computationa
 # Hands-on sessions
 ---
 
-Before the school, we will provide each participant with a [virtual machine](https://en.wikipedia.org/wiki/Virtual_machine) (VM),
+We have prepared a [virtual machine](https://en.wikipedia.org/wiki/Virtual_machine) (VM)
 containing all the software necessary to follow the hands-on sessions.
 
-The participants will then be able to execute all exercises on their own laptops.
+[**Click here to see the VM installation instructions.**](https://github.com/rbi-mtm/ams)
 
 {{% callout note %}}
 To participate in the hands-on sessions,
@@ -238,6 +238,7 @@ at the [Ruđer Bošković institute](https://www.irb.hr/eng) in collaboration wi
 # Resources
 ---
 
+- The school [GitHub repository](https://github.com/rbi-mtm/ams) containing the VM and exercises
 - [Other schools and workshops organized by our group](/teaching)
 
 # Contact

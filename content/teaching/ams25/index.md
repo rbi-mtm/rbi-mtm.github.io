@@ -89,8 +89,8 @@ School attendance is **free** for all participants.
   </thead>
   <tbody>
     <tr style="background-color:#ffffff; transition: background 0.2s;" onmouseover="this.style.backgroundColor='#f0f8ff';" onmouseout="this.style.backgroundColor='#ffffff';">
-      <td style="padding:10px; vertical-align: middle;">8:30</td>
-      <td style="padding:10px; vertical-align: middle;">9:00</td>
+      <td style="padding:10px; vertical-align: middle;">8:00</td>
+      <td style="padding:10px; vertical-align: middle;">8:50</td>
       <td style="background-color:#D8BCE8; padding:10px; vertical-align: middle;"><strong>Registration</strong></td>
       <td style="background-color:#f9f9f9; color:#bbb; padding:10px; vertical-align: middle;">-</td>
       <td style="background-color:#f9f9f9; color:#bbb; padding:10px; vertical-align: middle;">-</td>

@@ -240,6 +240,9 @@ at the [Ruđer Bošković institute](https://www.irb.hr/eng) in collaboration wi
 
 - The school [GitHub repository](https://github.com/rbi-mtm/ams) containing the VM and exercises
 - [Other schools and workshops organized by our group](/teaching)
+- Materials for [Quantum ESPRESSO Ljubljana Summer School (2019)](https://gitlab.com/QEF/material-for-ljubljana-qe-summer-school)
+- [F. Giustino, _Materials Modelling using Density Functional Theory: Properties and Predictions_](https://www.researchgate.net/profile/Seyedeh_Tahereh_Hosseini/post/Where_can_I_learn_density_functional_theory/attachment/5fdce96fe35e2b0001ff44a6/AS%3A970150027202560%401608313199049/download/DFT_Giustino.pdf)
+- [Learning Hub for Modelling and Simulation](https://www.lhumos.org/)
 
 # Contact
 ---

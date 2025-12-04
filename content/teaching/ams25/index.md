@@ -104,70 +104,70 @@ School attendance is **free** for all participants.
     </tr>
     <tr style="background-color:#ffffff; transition: background 0.2s;" onmouseover="this.style.backgroundColor='#f0f8ff';" onmouseout="this.style.backgroundColor='#ffffff';">
       <td style="padding:10px; vertical-align: middle;">9:55</td>
-      <td style="padding:10px; vertical-align: middle;">10:25</td>
+      <td style="padding:10px; vertical-align: middle;">10:15</td>
       <td style="background-color:#FFF9C4; padding:10px; vertical-align: middle;">Coffee Break</td>
       <td style="background-color:#FFF9C4; padding:10px; vertical-align: middle;">Coffee Break</td>
       <td style="background-color:#FFF9C4; padding:10px; vertical-align: middle;">Coffee Break</td>
     </tr>
     <tr style="background-color:#ffffff; transition: background 0.2s;" onmouseover="this.style.backgroundColor='#f0f8ff';" onmouseout="this.style.backgroundColor='#ffffff';">
-      <td style="padding:10px; vertical-align: middle;">10:25</td>
-      <td style="padding:10px; vertical-align: middle;">11:20</td>
+      <td style="padding:10px; vertical-align: middle;">10:15</td>
+      <td style="padding:10px; vertical-align: middle;">11:10</td>
       <td style="background-color:#D9EAF7; padding:10px; vertical-align: middle;"><strong>Luka Benić</strong><br>Fundamentals of Density Functional Theory</td>
       <td style="background-color:#D9EAF7; padding:10px; vertical-align: middle;"><strong>Ryan Requist</strong><br><em>Ab Initio</em> Molecular Dynamics</td>
       <td style="background-color:#D9EAF7; padding:10px; vertical-align: middle;"><strong>Ivor Lončarić</strong><br>Machine Learning in Materials Science</td>
     </tr>
     <tr style="background-color:#ffffff; transition: background 0.2s;" onmouseover="this.style.backgroundColor='#f0f8ff';" onmouseout="this.style.backgroundColor='#ffffff';">
-      <td style="padding:10px; vertical-align: middle;">11:20</td>
-      <td style="padding:10px; vertical-align: middle;">11:25</td>
+      <td style="padding:10px; vertical-align: middle;">11:10</td>
+      <td style="padding:10px; vertical-align: middle;">11:15</td>
       <td style="background-color:#FFF9C4; padding:10px; vertical-align: middle;">Break</td>
       <td style="background-color:#FFF9C4; padding:10px; vertical-align: middle;">Break</td>
       <td style="background-color:#FFF9C4; padding:10px; vertical-align: middle;">Break</td>
     </tr>
     <tr style="background-color:#ffffff; transition: background 0.2s;" onmouseover="this.style.backgroundColor='#f0f8ff';" onmouseout="this.style.backgroundColor='#ffffff';">
-      <td style="padding:10px; vertical-align: middle;">11:25</td>
-      <td style="padding:10px; vertical-align: middle;">12:20</td>
+      <td style="padding:10px; vertical-align: middle;">11:15</td>
+      <td style="padding:10px; vertical-align: middle;">12:10</td>
       <td style="background-color:#D9EAF7; padding:10px; vertical-align: middle;"><strong>Miha Gunde</strong><br>Intro to Crystallography & Atomistic Simulations</td>
       <td style="background-color:#D9EAF7; padding:10px; vertical-align: middle;"><strong>Bernhard Kretz</strong><br>Theory and Modelling of Electronic Transport</td>
       <td style="background-color:#DFF2D8; padding:10px; vertical-align: middle;"><strong>Bernhard Kretz</strong><br>Hands-on Session #1</td>
     </tr>
     <tr style="background-color:#ffffff; transition: background 0.2s;" onmouseover="this.style.backgroundColor='#f0f8ff';" onmouseout="this.style.backgroundColor='#ffffff';">
-      <td style="padding:10px; vertical-align: middle;">12:20</td>
-      <td style="padding:10px; vertical-align: middle;">13:50</td>
+      <td style="padding:10px; vertical-align: middle;">12:10</td>
+      <td style="padding:10px; vertical-align: middle;">13:05</td>
       <td style="background-color:#FFF9C4; padding:10px; vertical-align: middle;">Lunch</td>
       <td style="background-color:#FFF9C4; padding:10px; vertical-align: middle;">Lunch</td>
       <td style="background-color:#FFF9C4; padding:10px; vertical-align: middle;">Lunch</td>
     </tr>
     <tr style="background-color:#ffffff; transition: background 0.2s;" onmouseover="this.style.backgroundColor='#f0f8ff';" onmouseout="this.style.backgroundColor='#ffffff';">
-      <td style="padding:10px; vertical-align: middle;">13:50</td>
-      <td style="padding:10px; vertical-align: middle;">14:40</td>
+      <td style="padding:10px; vertical-align: middle;">13:05</td>
+      <td style="padding:10px; vertical-align: middle;">13:55</td>
       <td style="background-color:#DFF2D8; padding:10px; vertical-align: middle;"><strong>Miha Gunde</strong><br>Hands-on Session #1</td>
       <td style="background-color:#DFF2D8; padding:10px; vertical-align: middle;"><strong>Juraj Ovčar</strong><br>Hands-on Session #1</td>
       <td style="background-color:#DFF2D8; padding:10px; vertical-align: middle;"><strong>Bernhard Kretz</strong><br>Hands-on Session #2</td>
     </tr>
     <tr style="background-color:#ffffff; transition: background 0.2s;" onmouseover="this.style.backgroundColor='#f0f8ff';" onmouseout="this.style.backgroundColor='#ffffff';">
-      <td style="padding:10px; vertical-align: middle;">14:40</td>
-      <td style="padding:10px; vertical-align: middle;">15:10</td>
+      <td style="padding:10px; vertical-align: middle;">13:55</td>
+      <td style="padding:10px; vertical-align: middle;">14:15</td>
       <td style="background-color:#FFF9C4; padding:10px; vertical-align: middle;">Coffee Break</td>
       <td style="background-color:#FFF9C4; padding:10px; vertical-align: middle;">Coffee Break</td>
       <td style="background-color:#FFF9C4; padding:10px; vertical-align: middle;">Coffee Break</td>
     </tr>
     <tr style="background-color:#ffffff; transition: background 0.2s;" onmouseover="this.style.backgroundColor='#f0f8ff';" onmouseout="this.style.backgroundColor='#ffffff';">
-      <td style="padding:10px; vertical-align: middle;">15:10</td>
-      <td style="padding:10px; vertical-align: middle;">16:00</td>
+      <td style="padding:10px; vertical-align: middle;">14:15</td>
+      <td style="padding:10px; vertical-align: middle;">15:05</td>
       <td style="background-color:#DFF2D8; padding:10px; vertical-align: middle;"><strong>Miha Gunde</strong><br>Hands-on Session #2</td>
       <td style="background-color:#DFF2D8; padding:10px; vertical-align: middle;"><strong>Juraj Ovčar</strong><br>Hands-on Session #2</td>
       <td style="background-color:#DFF2D8; padding:10px; vertical-align: middle;"><strong>Bernhard Kretz</strong><br>Hands-on Session #3</td>
     </tr>
     <tr style="background-color:#ffffff; transition: background 0.2s;" onmouseover="this.style.backgroundColor='#f0f8ff';" onmouseout="this.style.backgroundColor='#ffffff';">
-      <td style="padding:10px; vertical-align: middle;">16:00</td>
-      <td style="padding:10px; vertical-align: middle;">16:05</td>
+      <td style="padding:10px; vertical-align: middle;">15:05</td>
+      <td style="padding:10px; vertical-align: middle;">15:10</td>
       <td style="background-color:#FFF9C4; padding:10px; vertical-align: middle;">Break</td>
       <td style="background-color:#FFF9C4; padding:10px; vertical-align: middle;">Break</td>
       <td style="background-color:#FFF9C4; padding:10px; vertical-align: middle;">Break</td>
     </tr>
     <tr style="background-color:#ffffff; transition: background 0.2s;" onmouseover="this.style.backgroundColor='#f0f8ff';" onmouseout="this.style.backgroundColor='#ffffff';">
-      <td style="padding:10px; vertical-align: middle;">16:05</td>
-      <td style="padding:10px; vertical-align: middle;">17:00</td>
+      <td style="padding:10px; vertical-align: middle;">15:10</td>
+      <td style="padding:10px; vertical-align: middle;">16:00</td>
       <td style="background-color:#DFF2D8; padding:10px; vertical-align: middle;"><strong>Miha Gunde</strong><br>Hands-on Session #3</td>
       <td style="background-color:#DFF2D8; padding:10px; vertical-align: middle;"><strong>Juraj Ovčar</strong><br>Hands-on Session #3</td>
       <td style="background-color:#A2F5EE; padding:10px; vertical-align: middle;"><strong>Panel Discussion</strong></td>

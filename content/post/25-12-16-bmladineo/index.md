@@ -3,9 +3,9 @@ title: Congratulations to Bruno Mladineo, PhD!
 date: 2025-12-16
 ---
 
-On December 16 2025, **Bruno Mladineo** defended his **PhD thesis**:
+_On December 16 2025, **Bruno Mladineo** defended his **PhD thesis**:_
 <br>
-**_Modelling of Complex Materials Using Machine-Learned Interatomic Potentials_**.
+_Modelling of Complex Materials Using Machine-Learned Interatomic Potentials_.
 
 <!--more-->
 

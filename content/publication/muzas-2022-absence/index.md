@@ -2,16 +2,15 @@
 title: Absence of isotope effects in the photo-induced desorption of CO from saturated
   Pd (111) at high laser fluence
 authors:
-- Alberto S Muzas
+- AS Muzas
 - Alfredo Serrano Jiménez
-- admin
+- Juraj Ovčar
 - iloncaric
 - Maite Alducin
 - J Iñaki Juaristi
-date: '2022-06-01'
-publishDate: '2025-09-29T19:45:06.580021Z'
+date: '2022-01-01'
+publishDate: '2025-12-29T06:05:13.532483Z'
 publication_types:
 - article-journal
 publication: '*Chemical Physics*'
-doi: 'https://doi.org/10.1016/j.chemphys.2022.111518'
 ---

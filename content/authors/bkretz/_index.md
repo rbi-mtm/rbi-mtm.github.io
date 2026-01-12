@@ -88,4 +88,4 @@ Furthermore, he successfully collaborated with experimentalists, exploring the p
 
 He also worked in the private sector for one year as project engineer for computational fluid dynamics.
 
-Bernhard a permanent staff member in the Modelling and Theory of Materials Group since 2026.
+Bernhard is a permanent staff member in the Modelling and Theory of Materials Group since 2026.

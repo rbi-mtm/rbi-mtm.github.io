@@ -1,7 +1,7 @@
 ---
 # Display name
 title: Juraj Ovčar
-priority: 100
+priority: 101
 
 # Full Name (for SEO)
 first_name: Juraj

@@ -15,7 +15,7 @@ authors:
 superuser: false
 
 # Role/position
-role: Postdoctoral Researcher
+role: Research Associate
 
 # Organizations/Affiliations
 organizations:
@@ -72,7 +72,7 @@ email: 'bgkretz@irb.hr'
 # Organizational groups that you belong to (for People widget)
 #   Set this to `[]` or comment out if you are not using People widget.
 user_groups:
-  - Postdoctoral Researchers
+  - Permanent Staff
 ---
 
 **Bernhard Kretz, PhD** is a computational condensed matter physicist.
@@ -85,4 +85,4 @@ Furthermore, he successfully collaborated with experimentalists, exploring the p
 
 He also worked in the private sector for one year as project engineer for computational fluid dynamics.
 
-Bernhard is a postdoctoral researcher in the Modelling and Theory of Materials Group since 2024.
+Bernhard a permanent staff member in the Modelling and Theory of Materials Group since 2026.

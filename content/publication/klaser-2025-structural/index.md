@@ -4,7 +4,7 @@ title: Structural Evolution Leading to the Thermosalient Phase Transition of Oxi
 authors:
 - Teodoro Klaser
 - Jasminka Popović
-- Ivor Lončarić
+- iloncaric
 - Željko Skoko
 date: '2025-02-26'
 publication_types:

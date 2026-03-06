@@ -3,7 +3,7 @@ title: Announcing Master Thesis Topics (2026)
 date: 2026-03-04
 ---
 
-_Our group is announcing five master thesis topics related to atomistic modeling of materials._
+_Our group is announcing five master thesis topics related to atomistic modelling of materials._
 
 <!--more-->
 

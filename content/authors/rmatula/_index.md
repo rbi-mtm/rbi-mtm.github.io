@@ -73,3 +73,8 @@ His research interests include ab intio modelling of materials, primarily with d
 He started his work with DFT during his bachelor thesis, when he worked on modelling the band structure of [CsPbBr3 perovskite](https://pubs.acs.org/doi/full/10.1021/acs.jpcc.3c03056) in tandem with experimental research. He continued to his master's combining DFT with machine learning to study the halide exchange in lead mixed-halide perovskites. He continues to build on his previous experiences during his PhD.
 
 Radovan is a PhD student in the Modelling and Theory of Materials Group since 2025.
+
+_DOK-NPOO-2023-10-2165_
+
+Within the HrZZ DOK project his research focuses on machine learning for atomistic simulations, with the main goal of his PhD being the development of universal machine learning interatomic potentials (MLIPs) for molecular crystals.
+He works on developing a workflow which combines active learning strategies with the MACE architecture to efficiently generate high-quality training data and ensure the transferability of the resulting models across diverse crystal systems.

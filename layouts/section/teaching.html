@@ -6,7 +6,7 @@
   <div class="article-style">{{ . }}</div>
   {{ end }}
 
-  {{ $paginator := .Paginate .Data.Pages }}
+  {{ $paginator := .Paginate .Pages }}
 
   {{ $years := slice }}
   {{ range $paginator.Pages }}

@@ -20,18 +20,35 @@
       {{ partial $widget $params }}
     {{end}}
 
-    {{ $query := where .Pages ".IsNode" false }}
+    {{ $query := (where .Pages ".IsNode" false).ByDate.Reverse }}
     {{ $count := len $query }}
     {{ if $count }}
-    <div class="article-widget content-widget-hr">
-      <h3>{{ i18n "user_profile_latest" | default "Latest" }}</h3>
-      <ul>
-        {{ range $query }}
-        <li>
-	<a href="{{ .Params.doi }}" target="_blank" rel="noopener">{{ .Title }}</a>
-        </li>
+    <div class="article-widget mt-4">
+
+      {{ $years := slice }}
+      {{ range $query }}
+        {{ $year := .Date.Format "2006" }}
+        {{ if not (in $years $year) }}
+          {{ $years = $years | append $year }}
         {{ end }}
-      </ul>
+      {{ end }}
+
+      {{ range $yi, $year := $years }}
+        <div class="group-heading{{ if eq $yi 0 }} is-first{{ end }}">
+          <h2>{{ $year }}</h2>
+        </div>
+
+        {{ $.Scratch.Set "pub_number" 0 }}
+        {{ range $item := $query }}
+          {{ if eq ($item.Date.Format "2006") $year }}
+            {{ $.Scratch.Add "pub_number" 1 }}
+            <div class="pub-row">
+              <div class="pub-number">{{ $.Scratch.Get "pub_number" }}</div>
+              {{ partial "functions/render_view" (dict "page" $ "item" $item "view" "citation" "index" 0) }}
+            </div>
+          {{ end }}
+        {{ end }}
+      {{ end }}
     </div>
     {{ end }}
   </div>

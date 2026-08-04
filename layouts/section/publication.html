@@ -1,9 +1,8 @@
 {{- define "main" -}}
 
 {{ $.Page.Store.Set "has_isotope" true }}
-{{ partial "page_header.html" . }}
 
-<div class="universal-wrapper">
+<div class="universal-wrapper pt-4">
   <div class="row">
     <div class="col-lg-12">
 
@@ -11,27 +10,29 @@
       <div class="article-style">{{ . }}</div>
       {{ end }}
 
-      <br>
-
       {{/* --- Display Preprints --- */}}
       {{ $preprints := where $.Pages.ByDate.Reverse "Params.preprint" true }}
       {{ if gt (len $preprints) 0 }}
-        <h1>Preprints</h1>
-        <hr>
+        <div class="group-heading is-first">
+          <h2>Preprints</h2>
+        </div>
+        {{ $.Scratch.Set "pub_number" 0 }}
         {{ range $index, $item := $preprints }}
           {{ if $item.Params.publication_types }}
             {{ $.Scratch.Set "pubtype" (index $item.Params.publication_types 0) }}
           {{ else }}
             {{ $.Scratch.Set "pubtype" 0 }}
           {{ end }}
+          {{ $.Scratch.Add "pub_number" 1 }}
 
           <div class="grid-sizer col-lg-12 isotope-item pubtype-{{ $.Scratch.Get "pubtype" }} preprint">
-            {{ partial "functions/render_view" (dict "page" $ "item" $item "view" ($.Params.view | default "compact") "index" $index) }}
+            <div class="pub-row">
+              <div class="pub-number">{{ $.Scratch.Get "pub_number" }}</div>
+              {{ partial "functions/render_view" (dict "page" $ "item" $item "view" ($.Params.view | default "compact") "index" $index) }}
+            </div>
           </div>
         {{ end }}
       {{ end }}
-
-      <br>
 
       {{/* --- Collect distinct years for non-preprints --- */}}
       {{ $.Scratch.Set "years" (slice) }}
@@ -45,10 +46,12 @@
       {{ end }}
 
       {{/* --- Loop through each year for non-preprints --- */}}
-      {{ range $year := $.Scratch.Get "years" }}
-        <h1>{{ $year }}</h1>
-        <hr>
+      {{ range $yi, $year := $.Scratch.Get "years" }}
+        <div class="group-heading{{ if and (eq $yi 0) (eq (len $preprints) 0) }} is-first{{ end }}">
+          <h2>{{ $year }}</h2>
+        </div>
 
+        {{ $.Scratch.Set "pub_number" 0 }}
         {{ range $index, $item := $.Pages.ByDate.Reverse }}
           {{ if and (eq ($item.Date.Format "2006") $year) (not $item.Params.preprint) }}
 
@@ -57,9 +60,13 @@
             {{ else }}
               {{ $.Scratch.Set "pubtype" 0 }}
             {{ end }}
+            {{ $.Scratch.Add "pub_number" 1 }}
 
             <div class="grid-sizer col-lg-12 isotope-item pubtype-{{ $.Scratch.Get "pubtype" }} year-{{ $item.Date.Format "2006" }}">
-              {{ partial "functions/render_view" (dict "page" $ "item" $item "view" ($.Params.view | default "compact") "index" $index) }}
+              <div class="pub-row">
+                <div class="pub-number">{{ $.Scratch.Get "pub_number" }}</div>
+                {{ partial "functions/render_view" (dict "page" $ "item" $item "view" ($.Params.view | default "compact") "index" $index) }}
+              </div>
             </div>
 
           {{ end }}

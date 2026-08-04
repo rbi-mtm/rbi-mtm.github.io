@@ -54,10 +54,10 @@ social:
     icon_pack: fab
     link: https://github.com/rbi-mtm
   - icon: orcid
-    icon_pack: brands
+    icon_pack: fab
     link: https://orcid.org/0000-0002-6728-1025
   - icon: linkedin
-    icon_pack: brands
+    icon_pack: fab
     link: https://www.linkedin.com/in/bernhard-kretz/
 
 # Link to a PDF of your resume/CV from the About widget.

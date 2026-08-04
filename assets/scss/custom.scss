@@ -14,11 +14,62 @@
   vertical-align: middle;
 }
 
+/* Homepage hero: calmer subtitle line under the big welcome title */
+.hero-lead a {
+  color: $sta-primary;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.hero-lead a:hover {
+  text-decoration: underline;
+}
+
+/* Homepage Latest News: no grey band, slightly slicker heading + "see all" link */
+.home-section.no-section-bg {
+  background: transparent;
+}
+
+.no-section-bg .section-heading h1 {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: $sta-primary;
+  white-space: nowrap;
+}
+
+.no-section-bg .section-heading h1::after {
+  content: "";
+  flex: 1 1 auto;
+  height: 1px;
+  background: rgba(0, 0, 0, 0.12);
+}
+
+.see-all a {
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: $sta-primary;
+}
+
+.see-all i {
+  margin-left: 0.25rem;
+  transition: transform 0.15s ease;
+}
+
+.see-all a:hover i {
+  transform: translateX(3px);
+}
+
 .full-width-bg {
-    background-color: #f0f0f0; /* Use your desired color or image */
+    background-color: transparent;
     display: flex;
     align-items: center; /* Vertically center the content */
     min-height: 20px;       /* adjust as needed */
+    padding: 2.5rem 0 1rem;
 }
 
 .full-width-bg .universal-wrapper {
@@ -27,6 +78,11 @@
   padding-top: 0em;
   padding-bottom: 0em;
   margins: 0 0px;
+}
+
+.full-width-bg h1 {
+  font-weight: 700;
+  letter-spacing: -0.01em;
 }
 
 .article-style p {
@@ -43,8 +99,10 @@
   max-width: 1200px;
 }
 
-/* People page: separate Group Leader / Permanent Staff / etc. sections clearly */
-.people-widget .people-group-heading {
+/* Reusable section divider: an uppercase tracked label + hairline rule.
+   Used to subdivide the People page (Group Leader / Permanent Staff / ...)
+   and the News page (by year). */
+.group-heading {
   display: flex;
   align-items: center;
   gap: 1rem;
@@ -52,23 +110,326 @@
   margin: 3.5rem 0 2rem;
 }
 
-.people-widget .people-group-heading.is-first {
+.group-heading.is-first {
   margin-top: 0.5rem;
 }
 
-.people-widget .people-group-heading h2 {
+.group-heading h2 {
   margin: 0;
   font-size: 0.85rem;
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: #3f51b5;
+  color: $sta-primary;
   white-space: nowrap;
 }
 
-.people-widget .people-group-heading::after {
+.group-heading::after {
   content: "";
   flex: 1 1 auto;
   height: 1px;
   background: rgba(0, 0, 0, 0.12);
+}
+
+/* Contact page: same small tracked-label + hairline treatment, applied
+   directly to the markdown h3s since there's no wrapping div to hook into. */
+.contact-page h3 {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 2.5rem 0 1.25rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: $sta-primary;
+  white-space: nowrap;
+}
+
+.contact-page h3:first-of-type {
+  margin-top: 0.5rem;
+}
+
+.contact-page h3::after {
+  content: "";
+  flex: 1 1 auto;
+  height: 1px;
+  background: rgba(0, 0, 0, 0.12);
+}
+
+/* Breathing room between cards in a row, not just between rows */
+.people-widget {
+  column-gap: 1.5rem;
+}
+
+/* People cards: give each person a proper card instead of a bare floating avatar */
+.people-widget .people-person {
+  position: relative;
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 14px;
+  padding: 1.75rem 1rem 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+  transition: box-shadow 0.15s ease, transform 0.15s ease;
+}
+
+.people-widget .network-icon {
+  margin-top: 1.1rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  justify-content: center;
+}
+
+.people-widget .people-person:hover {
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+  transform: translateY(-3px);
+}
+
+/* Stronger, more confident name typography (was a thin, easy-to-miss weight) */
+.portrait-title h2 {
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: #1a1a2e;
+}
+
+/* Role on both the People grid and the individual profile page: plain text */
+.role-line {
+  font-weight: 600;
+  font-size: 1.05rem;
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.role-line a {
+  color: inherit;
+}
+
+.role-line a:hover {
+  color: $sta-primary;
+}
+
+.people-widget .role-line {
+  font-size: 0.85rem;
+}
+
+/* Soft depth behind every avatar, real photo or monogram alike */
+.avatar-circle,
+.avatar-square {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.avatar-square {
+  border-radius: 18%;
+}
+
+/* Profile sidebar card: avatar, name, role, social icons */
+#profile.profile-card {
+  padding: 1.75rem 1.5rem;
+  text-align: center;
+}
+
+#profile .network-icon {
+  margin-top: 1.5rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  justify-content: center;
+}
+
+/* Contact icons: filled tinted buttons instead of bare glyphs */
+.network-icon li {
+  margin-right: 0.5rem;
+}
+
+.network-icon li a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 50%;
+  background-color: rgba($sta-primary, 0.08);
+  color: $sta-primary;
+  transition: background-color 0.15s ease, color 0.15s ease, transform 0.15s ease;
+}
+
+.network-icon li a:hover {
+  background-color: $sta-primary;
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.network-icon li:hover {
+  /* Replace the vendor's bare-icon scale hover with the button hover above */
+  transform: none;
+}
+
+.network-icon i {
+  font-size: 1rem;
+}
+
+.people-widget .network-icon li a {
+  position: relative;
+  z-index: 2;
+  width: 1.9rem;
+  height: 1.9rem;
+}
+
+.people-widget .network-icon i {
+  font-size: 0.85rem;
+}
+
+/* Interests: a plain list, no bullets, no tag/pill background */
+ul.ul-interests {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+ul.ul-interests li {
+  padding: 0.4rem 0;
+  font-size: 0.92rem;
+  color: rgba(0, 0, 0, 0.75);
+}
+
+ul.ul-interests li:not(:last-child) {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+/* Small tracked label used for profile subsections: Interests, Education, Latest */
+.profile-label {
+  margin-bottom: 0.85rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: $sta-primary;
+}
+
+/* Education: plain bold course/year, no bullet or icon */
+.ul-edu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.ul-edu li {
+  padding: 0 0 1rem;
+}
+
+.ul-edu li:last-child {
+  padding-bottom: 0;
+}
+
+.ul-edu .course {
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+.ul-edu .institution {
+  color: rgba(0, 0, 0, 0.55);
+  font-size: 0.8rem;
+}
+
+/* Interests / Education: pulled into their own card, set apart from the bio text */
+.profile-cards-row {
+  margin-top: 2rem;
+  align-items: flex-start;
+}
+
+.profile-card {
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 14px;
+  padding: 1.5rem;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+}
+
+/* News cards: a proper card instead of a flat grey box with a black border */
+.news-card {
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 14px;
+  padding: 1.5rem;
+  margin-bottom: 1.25rem !important;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+  transition: box-shadow 0.15s ease, transform 0.15s ease, border-color 0.15s ease;
+}
+
+.news-card:hover {
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+  transform: translateY(-2px);
+  border-color: rgba($sta-primary, 0.3);
+}
+
+.news-card .article-title {
+  font-weight: 700;
+}
+
+.news-card .article-title a {
+  color: #1a1a2e;
+}
+
+.news-card .article-title a:hover {
+  color: $sta-primary;
+}
+
+.news-card .stream-meta {
+  color: rgba(0, 0, 0, 0.55);
+}
+
+.news-card img {
+  border-radius: 10px;
+}
+
+/* Publication cards: same card language as News, whole card clicks through to
+   the DOI except for author names, which stay linked to their own page. */
+.pub-card {
+  position: relative;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.pub-card .li-cite-author a {
+  position: relative;
+  z-index: 2;
+}
+
+.pub-card .pub-title {
+  font-weight: 700;
+  color: #00695c;
+  transition: color 0.15s ease;
+}
+
+.pub-card:hover .pub-title {
+  color: $sta-primary;
+}
+
+/* Per-year publication numbering, sitting left of each card */
+.pub-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.pub-row .pub-card {
+  flex: 1 1 auto;
+  min-width: 0;
+  margin-bottom: 0 !important;
+}
+
+.pub-number {
+  flex: 0 0 2.25rem;
+  padding-top: 1.6rem;
+  text-align: right;
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 575.98px) {
+  .pub-number {
+    display: none;
+  }
 }

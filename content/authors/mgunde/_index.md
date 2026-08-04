@@ -59,7 +59,7 @@ social:
     icon_pack: fab
     link: https://gitlab.com/mammasmias
   - icon: orcid
-    icon_pack: brands
+    icon_pack: fab
     link: https://orcid.org/0000-0003-0894-3233
 
 

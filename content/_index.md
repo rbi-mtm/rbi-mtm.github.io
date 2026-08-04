@@ -8,20 +8,18 @@ sections:
   - block: hero
     content:
       title: |
-        # Welcome to the <br> **Modelling and Theory of Materials Group!**
-        ---
+        Welcome to the Modelling and Theory of Materials Group
+      text: |
         [@ **The Division of Theoretical Physics**](https://www.irb.hr/eng/Divisions/Division-of-Theoretical-Physics)  
-        [@ **Ruđer Bošković Institute**](https://www.irb.hr/eng)   
+        [@ **Ruđer Bošković Institute**](https://www.irb.hr/eng)
 #      image:
 #        filename: atom.png
-#      text: |
-#        <br> Thanks
 
   - block: collection
     content:
       title: Latest News
       subtitle:
-      text: <br>
+      text:
       count: 3
       filters:
         author: ''
@@ -35,6 +33,7 @@ sections:
     design:
       view: compact_grey
       columns: '1'
+      css_class: no-section-bg
   
 #  - block: markdown
 #    content:

@@ -10,4 +10,3 @@ banner:
   image: ''
   text: ''
 ---
-<br>

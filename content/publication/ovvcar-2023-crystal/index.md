@@ -3,7 +3,7 @@ title: Crystal structure prediction of quasi-two-dimensional lead halide perovsk
 authors:
 - admin
 - Luca Grisanti
-- Bruno Mladineo
+- bmladineo
 - Aleksandra B Djurišić
 - Jasminka Popović
 - iloncaric

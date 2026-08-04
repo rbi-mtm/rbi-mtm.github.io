@@ -2,7 +2,7 @@
 title: Illustrating Extreme Negative Linear Compressibility in Thermosalient Molecular
   Crystals
 authors:
-- Bruno Mladineo
+- bmladineo
 - Teodoro Klaser
 - Martin Ende
 - Jasminka Popović

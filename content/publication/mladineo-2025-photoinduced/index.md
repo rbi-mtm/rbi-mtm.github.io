@@ -2,7 +2,7 @@
 title: 'Photoinduced dynamics of CO on Ru (0001): Understanding experiments by simulations
   with all degrees of freedom'
 authors:
-- Bruno Mladineo
+- bmladineo
 - J Iñaki Juaristi
 - Maite Alducin
 - Peter Saalfrank

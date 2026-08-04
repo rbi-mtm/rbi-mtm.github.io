@@ -2,7 +2,7 @@
 title: Exploring elastic properties of molecular crystals with universal machine learning
   interatomic potentials
 authors:
-- Anastasiia Kholtobina
+- akholtobina
 - iloncaric
 date: '2025-06-01'
 publication_types:

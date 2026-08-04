@@ -1,7 +1,7 @@
 ---
 title: Thermosalient phase transitions from machine learning interatomic potential
 authors:
-- Bruno Mladineo
+- bmladineo
 - iloncaric
 date: '2024-10-07'
 publication_types:

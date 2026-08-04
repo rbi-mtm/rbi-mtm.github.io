@@ -5,7 +5,7 @@ authors:
 - Ben KD Pearce
 - Martin Etter
 - Khai-Nghi Truong
-- Tea Ostojić
+- tostojic
 - Andraž Krajnc
 - Gregor Mali
 - Barbara Rossi

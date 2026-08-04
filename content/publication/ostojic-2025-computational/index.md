@@ -2,7 +2,7 @@
 title: Computational investigation of uracil dimers in water and the role of classical
   potentials
 authors:
-- Tea Ostojić
+- tostojic
 - admin
 - Ali Hassanali
 - Luca Grisanti

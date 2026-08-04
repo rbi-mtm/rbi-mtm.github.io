@@ -2,7 +2,7 @@
 title: Multidimensional Neural Network Interatomic Potentials for CO on NaCl (100)
 authors:
 - Shreya Sinha
-- Bruno Mladineo
+- bmladineo
 - iloncaric
 - Peter Saalfrank
 date: '2024-11-26'

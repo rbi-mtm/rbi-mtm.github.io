@@ -178,6 +178,11 @@
   font-size: 0.90rem; /* Slightly smaller than normal */
 }
 
+.article-style ul,
+.article-style ol {
+  font-size: 0.90rem; /* Match paragraph text so lists don't look oversized */
+}
+
 /* Widen article content */
 .article-container {
   max-width: 1300px; /* or try 100% if you want full width */
@@ -269,6 +274,18 @@
   flex: 1 1 auto;
   height: 1px;
   background: rgba(0, 0, 0, 0.12);
+}
+
+.article-style > h1:has(+ hr):first-child,
+.article-style > h2:has(+ hr):first-child {
+  margin-top: 0.5rem;
+}
+
+/* When a page's own title is left blank (e.g. Research), the template still
+   renders an empty <h1></h1> above the content, which otherwise reserves a
+   full heading line-height of dead space. */
+h1:empty {
+  display: none;
 }
 
 .article-style h1:has(+ hr) + hr,

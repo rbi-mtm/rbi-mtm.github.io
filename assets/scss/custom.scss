@@ -14,15 +14,77 @@
   vertical-align: middle;
 }
 
-/* Homepage hero: calmer subtitle line under the big welcome title */
-.hero-lead a {
-  color: $sta-primary;
-  font-weight: 600;
-  text-decoration: none;
+/* Homepage hero: a short "Welcome" note instead of a big title, using the
+   same tracked-label pattern as the Latest News heading and other section
+   dividers below it. */
+.hero-lead {
+  max-width: none;
+  font-size: 1rem;
 }
 
-.hero-lead a:hover {
-  text-decoration: underline;
+.hero-lead h6 {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 0 0 0.85rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: $sta-primary;
+  white-space: nowrap;
+}
+
+.hero-lead h6::after {
+  content: "";
+  flex: 1 1 auto;
+  height: 1px;
+  background: rgba(0, 0, 0, 0.12);
+}
+
+/* Welcome sentence: a touch larger and darker than body text, since it
+   carries the visual weight the removed <h1> used to. No max-width here —
+   it's one short sentence and should stay on one line on normal screens
+   rather than wrap an orphan word. */
+.hero-lead p:first-of-type {
+  font-size: 1.2rem;
+  line-height: 1.5;
+  color: #1a1a2e;
+}
+
+.hero-lead p:first-of-type strong {
+  font-weight: 700;
+}
+
+/* Affiliation lines: compact, muted, no underline until hover — a quiet
+   footnote rather than a competing headline. */
+.hero-lead p:last-child {
+  margin-top: 1.1rem;
+  margin-bottom: 0;
+  line-height: 1.7;
+}
+
+/* Trim the gap to Latest News below — the hero content is short now, it
+   doesn't need the theme's full section padding on either side of the seam. */
+.wg-hero {
+  padding-bottom: 1.5em;
+}
+
+.home-section.no-section-bg {
+  padding-top: 2.5em;
+}
+
+.wg-hero .hero-lead a {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.5);
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+.wg-hero .hero-lead a:hover,
+.wg-hero .hero-lead a:focus {
+  color: $sta-primary;
 }
 
 /* Homepage Latest News: no grey band, slightly slicker heading + "see all" link */

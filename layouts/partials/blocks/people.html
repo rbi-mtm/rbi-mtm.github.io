@@ -17,8 +17,8 @@
     </div>
   {{ end }}
 
-  {{ range $block.content.user_groups }}
-    {{ $query := where (where site.Pages "Section" "authors") ".Params.user_groups" "intersect" (slice .) }}
+  {{ range $i, $group := $block.content.user_groups }}
+    {{ $query := where (where site.Pages "Section" "authors") ".Params.user_groups" "intersect" (slice $group) }}
 
     {{/* Sort */}}
     {{ $sort_by := $block.content.sort_by | default "Params.last_name" }}
@@ -28,8 +28,8 @@
     {{ $query = sort $query $sort_by $sort_order }}
 
     {{if $query | and (gt (len $block.content.user_groups) 1) }}
-      <div class="col-md-12">
-        <h2 class="mb-4">{{ . | markdownify }}</h2>
+      <div class="col-12 people-group-heading{{ if eq $i 0 }} is-first{{ end }}">
+        <h2>{{ $group | markdownify }}</h2>
       </div>
     {{end}}
 

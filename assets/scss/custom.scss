@@ -42,3 +42,33 @@
 .article-style {
   max-width: 1200px;
 }
+
+/* People page: separate Group Leader / Permanent Staff / etc. sections clearly */
+.people-widget .people-group-heading {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  margin: 3.5rem 0 2rem;
+}
+
+.people-widget .people-group-heading.is-first {
+  margin-top: 0.5rem;
+}
+
+.people-widget .people-group-heading h2 {
+  margin: 0;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #3f51b5;
+  white-space: nowrap;
+}
+
+.people-widget .people-group-heading::after {
+  content: "";
+  flex: 1 1 auto;
+  height: 1px;
+  background: rgba(0, 0, 0, 0.12);
+}

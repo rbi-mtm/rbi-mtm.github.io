@@ -15,7 +15,7 @@ authors:
 superuser: false
 
 # Role/position
-role: Postdoctoral Researcher
+role: Postdoctoral Researcher (2022-2026)
 
 # Organizations/Affiliations
 organizations:
@@ -95,4 +95,6 @@ Contact me for more info!
  - Normand Mousseau, Université de Montréal, Canada
  - Matic Poberznik, IJS, Ljubljana, Slovenia
  - Hannes Jónsson, Alejandro Peña-Torres, Rohit Goswami, University of Iceland, Reykjavík, Iceland
+
+*Miha was a postdoctoral researcher in the Modelling and Theory of Materials Group from 2022 to 2026.*
 

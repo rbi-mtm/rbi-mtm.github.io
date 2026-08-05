@@ -113,6 +113,30 @@ $(document).on('click', '.navbar-collapse.show', function (e) {
   }
 });
 
+/* ---------------------------------------------------------------------------
+ * Close the mobile collapsable menu on clicking anywhere outside it.
+ * --------------------------------------------------------------------------- */
+
+/* LOCAL OVERRIDE (new behavior, no vendor equivalent): Bootstrap's collapse
+   component — unlike its dropdown component — has no built-in "click
+   outside to close." Previously the mobile menu only closed via an
+   explicit link click (handled above) or a second tap on the hamburger.
+   Close it on any click elsewhere on the page too, which is the behavior
+   users expect from a dropdown/overlay menu. Skip clicks inside the menu
+   itself and on the hamburger button, which already toggles it via its own
+   data-toggle="collapse" wiring — reacting to those here would fight that. */
+$(document).on('click', function (e) {
+  const $collapse = $('#navbar-content');
+  if (!$collapse.hasClass('show')) {
+    return;
+  }
+  const $target = $(e.target);
+  if ($target.closest('#navbar-content').length || $target.closest('.navbar-toggler').length) {
+    return;
+  }
+  $collapse.collapse('hide');
+});
+
 // Automatic main menu dropdowns on mouse over.
 $('body').on('mouseenter mouseleave', '.dropdown', function (e) {
   var dropdown = $(e.target).closest('.dropdown');

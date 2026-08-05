@@ -110,8 +110,36 @@ body.theme-ready {
   transition: background-color 0.25s ease, border-color 0.25s ease;
 }
 
+/* On mobile the collapsed menu is its own floating panel (see below, with
+   its own bottom-edge separator), so the hairline under the top bar reads
+   as a redundant stray line rather than a meaningful separator — drop it
+   there. Also cancel the vendor's own box-shadow on .navbar
+   (components/_nav.scss, both light and .dark variants) — a separate soft
+   drop-shadow beneath the bar that reads as its own line and isn't touched
+   by the border-bottom override above. */
+@include media-breakpoint-down(md) {
+  .navbar {
+    border-bottom: none;
+    box-shadow: none !important;
+  }
+}
+
 .navbar-collapse {
   background-color: var(--page-bg) !important;
+}
+
+/* Vendor gives the mobile dropdown (position:absolute, floating below the
+   50px bar) a solid indigo background — clearly distinct from the page
+   behind it. Our .navbar-collapse override above matches it to the bar's
+   own var(--page-bg) for the lg+ inline layout, but on mobile that means
+   the floating panel is the *exact same* color as the page it's floating
+   over. A tinted panel background turned out unreliable (too subtle to
+   read as "different" in light mode, an awkward one-off shade in dark) —
+   a simple bottom edge does the job instead. */
+@include media-breakpoint-down(md) {
+  .navbar-collapse {
+    border-bottom: 1px solid var(--card-border-medium);
+  }
 }
 
 /* Vendor hardcodes the hamburger icon to white (.navbar-light .navbar-toggler

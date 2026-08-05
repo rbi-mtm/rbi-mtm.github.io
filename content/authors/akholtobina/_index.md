@@ -43,7 +43,7 @@ email: 'anastasiia.kholtobina@gmail.com'
 # Organizational groups that you belong to (for People widget)
 #   Set this to `[]` or comment out if you are not using People widget.
 user_groups:
-  - Past Members
+  - Former Members / Postdoctoral Researchers
 ---
 
 *Anastasiia was a postdoctoral researcher in the Modelling and Theory of Materials Group from 2023 to 2025. Her notable work includes a 2025 publication on [universal machine learning interatomic potentials for molecular crystals](https://doi.org/10.1016/j.matdes.2025.114047), together with [Ivor Lončarić](/author/ivor-loncaric/).*

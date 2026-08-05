@@ -43,7 +43,7 @@ email: 'bruno.mladineo@gmail.com'
 # Organizational groups that you belong to (for People widget)
 #   Set this to `[]` or comment out if you are not using People widget.
 user_groups:
-  - Past Members
+  - Former Members / PhD Students
 ---
 
 On December 16 2025, **Bruno Mladineo** defended his **PhD thesis**:

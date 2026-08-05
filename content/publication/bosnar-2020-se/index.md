@@ -2,7 +2,7 @@
 title: Se intercalation between PtSe 2 and Pt surface in synthesis of PtSe 2 by direct
   selenization of Pt surface
 authors:
-- Mihovil Bosnar
+- mbosnar
 - Vasile Caciuc
 - Nicolae Atodiresei
 - iloncaric

@@ -8,7 +8,7 @@ authors:
 - Chao Ma
 - Kam Sing Wong
 - iloncaric
-- Luca Grisanti
+- lgrisanti
 - admin
 - Željko Skoko
 - ' others'

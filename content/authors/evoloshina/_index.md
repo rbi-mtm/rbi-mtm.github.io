@@ -11,7 +11,7 @@ last_name: Voloshina
 superuser: false
 
 # Role/position
-role: Senior Scientist
+role: Scientific Adviser
 
 # Organizations/Affiliations
 organizations:
@@ -71,7 +71,7 @@ highlight_name: true
 # Organizational groups that you belong to (for People widget)
 #   Set this to `[]` or comment out if you are not using People widget.
 user_groups:
-  - Permanent Staff
+  - Senior Researchers
 ---
 
 **Elena Voloshina, Dr. habil.** is a theoretical condensed matter physicist.

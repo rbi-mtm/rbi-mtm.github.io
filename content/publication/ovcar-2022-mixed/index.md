@@ -4,7 +4,7 @@ title: Mixed halide ordering as a tool for the stabilization of Ruddlesden--Popp
 authors:
 - admin
 - Tik Lun Leung
-- Luca Grisanti
+- lgrisanti
 - Željko Skoko
 - Martina Vrankic
 - Kam-Hung Low

@@ -4,7 +4,7 @@ authors:
 - Nina Girotto Erhardt
 - Aloı̈s Castellano
 - JP Alvarinhas Batista
-- Raffaello Bianco
+- rbianco
 - iloncaric
 - Matthieu J Verstraete
 - Dino Novko

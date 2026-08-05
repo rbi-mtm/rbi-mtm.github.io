@@ -17,7 +17,18 @@
     </div>
   {{ end }}
 
+  {{ $in_former_panel := false }}
   {{ range $i, $group := $block.content.user_groups }}
+    {{ $is_former := in $group "Former Members" }}
+
+    {{ if and $is_former (not $in_former_panel) }}
+      </div><div class="former-members-panel"><div class="row justify-content-center people-widget">
+      {{ $in_former_panel = true }}
+    {{ else if and (not $is_former) $in_former_panel }}
+      </div></div><div class="row justify-content-center people-widget">
+      {{ $in_former_panel = false }}
+    {{ end }}
+
     {{ $query := where (where site.Pages "Section" "authors") ".Params.user_groups" "intersect" (slice $group) }}
 
     {{/* Sort */}}
@@ -66,4 +77,8 @@
       </div>
     {{ end }}
   {{ end }}
-</div>
+  {{ if $in_former_panel }}
+    </div></div>
+  {{ else }}
+    </div>
+  {{ end }}

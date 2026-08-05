@@ -14,12 +14,14 @@ sections:
       user_groups:
           - Group Leader
           - Principal Investigators
-          - Permanent Staff
+          - Senior Researchers
           - Administration
           - Visitors
           - Postdoctoral Researchers
           - PhD Students
-          - Past Members
+          - Former Members / Senior Researchers
+          - Former Members / Postdoctoral Researchers
+          - Former Members / PhD Students
           - Undergraduate Students
       sort_by: Params.priority
       sort_ascending: true

@@ -1,7 +1,7 @@
 ---
 title: 'Proximity-induced magnetization in graphene: Towards efficient spin gating'
 authors:
-- Mihovil Bosnar
+- mbosnar
 - iloncaric
 - Predrag Lazić
 - KD Belashchenko

@@ -63,8 +63,8 @@
 .hero-lead h6::after {
   content: "";
   flex: 1 1 auto;
-  height: 1px;
-  background: rgba(0, 0, 0, 0.12);
+  height: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.12);
 }
 
 /* Welcome sentence: a touch larger and darker than body text, since it
@@ -132,8 +132,8 @@
 .no-section-bg .section-heading h1::after {
   content: "";
   flex: 1 1 auto;
-  height: 1px;
-  background: rgba(0, 0, 0, 0.12);
+  height: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.12);
 }
 
 .see-all a {
@@ -229,8 +229,17 @@
 .group-heading::after {
   content: "";
   flex: 1 1 auto;
-  height: 1px;
-  background: rgba(0, 0, 0, 0.12);
+  height: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+/* Longer labels (e.g. "Former Members / Postdoctoral Researchers") would
+   overflow a narrow phone screen with nowrap text; let them wrap there. */
+@media (max-width: 575.98px) {
+  .group-heading h2 {
+    white-space: normal;
+    line-height: 1.3;
+  }
 }
 
 /* Contact page: same small tracked-label + hairline treatment, applied
@@ -255,8 +264,8 @@
 .contact-page h3::after {
   content: "";
   flex: 1 1 auto;
-  height: 1px;
-  background: rgba(0, 0, 0, 0.12);
+  height: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.12);
 }
 
 /* Some pages (e.g. teaching/ams25) hand-author `# Heading` immediately
@@ -281,8 +290,8 @@
 .article-style h2:has(+ hr)::after {
   content: "";
   flex: 1 1 auto;
-  height: 1px;
-  background: rgba(0, 0, 0, 0.12);
+  height: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.12);
 }
 
 .article-style > h1:has(+ hr):first-child,
@@ -302,9 +311,12 @@ h1:empty {
   display: none;
 }
 
-/* Breathing room between cards in a row, not just between rows */
+/* Breathing room between cards in a row, not just between rows.
+   align-items: flex-start keeps a card without a photo sized to its own
+   content instead of stretching to match a taller, photo'd neighbor. */
 .people-widget {
   column-gap: 1.5rem;
+  align-items: flex-start;
 }
 
 /* People cards: give each person a proper card instead of a bare floating avatar */
@@ -329,6 +341,7 @@ h1:empty {
 .people-widget .people-person:hover {
   box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
   transform: translateY(-3px);
+  border-color: rgba($sta-primary, 0.3);
 }
 
 /* Stronger, more confident name typography (was a thin, easy-to-miss weight) */
@@ -336,6 +349,36 @@ h1:empty {
   font-weight: 700;
   letter-spacing: -0.01em;
   color: #1a1a2e;
+}
+
+/* Name turns primary blue on hover anywhere on the card, matching News/
+   Teaching cards, instead of only when the cursor is exactly over the text */
+.people-widget .portrait-title h2 a {
+  color: #1a1a2e;
+  text-decoration: none;
+}
+
+.people-widget .people-person:hover .portrait-title h2 a {
+  color: $sta-primary;
+  text-decoration: none;
+}
+
+/* Former members: all three "Former Members / ..." groups sit inside one
+   large, softly tinted panel with a visible border, so the whole region
+   reads as "no longer active" at a glance. Individual cards inside stay
+   white/normal (see people.html), so they still pop against the panel. */
+.former-members-panel {
+  background: #f5f5fa;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 20px;
+  padding: 2rem 1.5rem 0.5rem;
+  margin: 3rem 0;
+}
+
+/* The template's is-first class only marks the very first group overall,
+   not the first group inside this panel, so re-tighten it here directly. */
+.former-members-panel .group-heading:first-child {
+  margin-top: 0.5rem;
 }
 
 /* Role on both the People grid and the individual profile page: plain text */
@@ -357,7 +400,7 @@ h1:empty {
   font-size: 0.85rem;
 }
 
-/* Soft depth behind every avatar, real photo or monogram alike */
+/* Soft depth behind every avatar */
 .avatar-circle,
 .avatar-square {
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);

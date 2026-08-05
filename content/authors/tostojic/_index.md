@@ -46,7 +46,7 @@ email: 'teaostojic1@gmail.com'
 # Organizational groups that you belong to (for People widget)
 #   Set this to `[]` or comment out if you are not using People widget.
 user_groups:
-  - Past Members
+  - Former Members / PhD Students
 ---
 
 *Tea was a research assistant in the Modelling and Theory of Materials Group from 2021 to 2025, working on projects including [uracil dimers in water and the role of classical potentials](https://doi.org/10.1039/D4CP04238G) and [base-pairing of uracil and 2,6-diaminopurine: from cocrystals to photoreactivity](https://doi.org/10.1016/j.isci.2024.109894). She is currently a PhD candidate.*

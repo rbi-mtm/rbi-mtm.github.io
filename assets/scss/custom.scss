@@ -3,6 +3,86 @@
  * to avoid overwriting theme files on update.
  */
 
+/* Color tokens for everything hand-authored below. $sta-primary and friends
+   are SCSS variables — compile-time constants with no dark counterpart in
+   the vendor's own variable system — so runtime light/dark switching (the
+   .dark class toggled by wowchemy-theming.js) has to go through CSS custom
+   properties instead. :root holds the light values; body.dark redefines the
+   same names. Everything below should reference var(--token), never a
+   literal color, so both themes stay driven from one definition each. */
+:root {
+  --page-bg: #{$sta-background};
+  --card-bg: #fff;
+  --card-border-soft: rgba(0, 0, 0, 0.06);
+  --card-border-medium: rgba(0, 0, 0, 0.08);
+  --text-strong: #1a1a2e;
+  --text-muted-80: rgba(0, 0, 0, 0.8);
+  --text-muted-75: rgba(0, 0, 0, 0.75);
+  --text-muted-55: rgba(0, 0, 0, 0.55);
+  --text-muted-30: rgba(0, 0, 0, 0.3);
+  --hairline: rgba(0, 0, 0, 0.12);
+  --shadow-rest: 0 1px 2px rgba(0, 0, 0, 0.04);
+  --shadow-hover: 0 12px 28px rgba(0, 0, 0, 0.08);
+  --avatar-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+  --accent: #{$sta-primary};
+  --accent-border-hover: #{rgba($sta-primary, 0.3)};
+  --accent-soft-bg: #{rgba($sta-primary, 0.08)};
+  --former-panel-bg: #f5f5fa;
+  --pub-title: #00695c;
+  --slot-registration: #d8bce8;
+  --slot-lecture: #d9eaf7;
+  --slot-empty-bg: #f9f9f9;
+  --slot-empty-text: #bbb;
+  --slot-break: #fff9c4;
+  --slot-handson: #dff2d8;
+  --slot-panel: #a2f5ee;
+  --slot-hover: #f0f8ff;
+}
+
+body.dark {
+  --page-bg: #{$sta-dark-background};
+  --card-bg: #{$sta-dark-home-section-even};
+  --card-border-soft: rgba(255, 255, 255, 0.08);
+  --card-border-medium: rgba(255, 255, 255, 0.12);
+  --text-strong: rgba(255, 255, 255, 0.92);
+  --text-muted-80: rgba(255, 255, 255, 0.75);
+  --text-muted-75: rgba(255, 255, 255, 0.65);
+  --text-muted-55: rgba(255, 255, 255, 0.5);
+  --text-muted-30: rgba(255, 255, 255, 0.3);
+  --hairline: rgba(255, 255, 255, 0.14);
+  --shadow-rest: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --shadow-hover: 0 12px 28px rgba(0, 0, 0, 0.55);
+  --avatar-shadow: 0 8px 20px rgba(0, 0, 0, 0.45);
+  --accent: #8f9aff;
+  --accent-border-hover: rgba(143, 154, 255, 0.45);
+  --accent-soft-bg: rgba(143, 154, 255, 0.18);
+  --former-panel-bg: rgba(255, 255, 255, 0.04);
+  --pub-title: #4fd1c5;
+  --slot-registration: rgba(216, 188, 232, 0.16);
+  --slot-lecture: rgba(140, 190, 235, 0.16);
+  --slot-empty-bg: rgba(255, 255, 255, 0.03);
+  --slot-empty-text: rgba(255, 255, 255, 0.3);
+  --slot-break: rgba(240, 220, 120, 0.16);
+  --slot-handson: rgba(140, 210, 140, 0.16);
+  --slot-panel: rgba(110, 220, 210, 0.18);
+  --slot-hover: rgba(255, 255, 255, 0.06);
+}
+
+/* Smooth theme switch: background crossfades instead of snapping. The local
+   wowchemy-theming.js override removes the vendor's opacity-flash trick in
+   favor of this — see assets/js/wowchemy-theming.js. Scoped to
+   body.theme-ready (added by that script right after the initial theme is
+   set) so the very first server-render → client-corrected theme switch on
+   page load never itself animates — only later, explicit toggle clicks do.
+   Deliberately omits `color`: it's an inherited property, so transitioning
+   it on body would also visibly fade every plain-text child that inherits
+   color (paragraphs, card subtitles) on *every* page load, not just on
+   toggle — explicitly-colored elements like accent headings are unaffected
+   either way, since they never inherit from body's color at all. */
+body.theme-ready {
+  transition: background-color 0.25s ease;
+}
+
 .navbar-logo-text {
   font-size: 1.2rem; /* Adjust font size as needed */
   margin-left: 0.5rem; /* Space between logo and text */
@@ -14,29 +94,153 @@
   vertical-align: middle;
 }
 
-/* Nav links: a soft pill lights up behind the label on hover, and presses
-   down slightly on click, so they feel like real buttons instead of bare
-   text sitting on the bar. */
-.navbar .navbar-nav .nav-link {
+/* Navbar redesign: the bar now matches the page background in each theme
+   (a hairline border for separation) instead of a fixed indigo fill, since
+   the new logo carries its own color and needs a neutral backdrop to read
+   clearly — a mid-tone indigo bar was tested and turned out too close in
+   hue to the logo's own ink to give real contrast. Overrides vendor rules
+   that set this via $sta-menu-primary (a SCSS compile-time constant, same
+   value regardless of .dark) with !important to guarantee it wins; see
+   vendor components/_nav.scss for the specificity/!important this matches. */
+.navbar {
+  background: var(--page-bg) !important;
+  border-bottom: 1px solid var(--card-border-medium);
+  transition: background-color 0.25s ease, border-color 0.25s ease;
+}
+
+.navbar-collapse {
+  background-color: var(--page-bg) !important;
+}
+
+/* Two logo images (see navbar.html), CSS picks which shows: light ink for
+   the light-theme bar, light-colored ink for the dark-theme bar. A single
+   logo can't have enough contrast against both. */
+.navbar-brand img {
+  max-height: 48px;
+}
+
+.navbar-brand .navbar-logo-dark {
+  display: none;
+}
+
+body.dark .navbar-brand .navbar-logo-light {
+  display: none;
+}
+
+body.dark .navbar-brand .navbar-logo-dark {
+  display: inline-block;
+}
+
+/* Nav links: dark/light text to match the now-neutral bar, a soft tinted
+   pill lights up behind the label on hover, and presses down slightly on
+   click, so they feel like real buttons instead of bare text on the bar. */
+.navbar .navbar-nav .nav-link,
+#navbar-main .main-menu-item ul li .nav-link {
+  color: var(--text-muted-80) !important;
   border-radius: 8px;
-  transition: background-color 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
+  transition: background-color 0.15s ease, color 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
 }
 
 .navbar .navbar-nav .nav-link:hover,
 .navbar .navbar-nav .nav-link:focus {
-  background-color: rgba(255, 255, 255, 0.14);
+  background-color: var(--accent-soft-bg);
+  color: var(--text-strong) !important;
   transform: translateY(-2px);
-  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25);
+  box-shadow: var(--shadow-hover);
 }
 
 .navbar .navbar-nav .nav-link:active {
-  background-color: rgba(255, 255, 255, 0.22);
+  background-color: var(--accent-border-hover);
   transform: scale(0.96);
   box-shadow: none;
 }
 
 .navbar .navbar-nav .nav-link.active {
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: var(--accent-soft-bg);
+  color: var(--accent) !important;
+}
+
+/* Theme toggle: a real sliding switch (sun | moon) instead of a dropdown.
+   Track/icons use neutral tokens and the thumb is accent-colored, since the
+   bar itself is no longer a fixed colored backdrop a white thumb could
+   always rely on. */
+.theme-switch-item {
+  display: flex;
+  align-items: center;
+}
+
+.theme-switch {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 56px;
+  height: 28px;
+  border-radius: 999px;
+  background: var(--card-border-medium);
+  padding: 3px;
+}
+
+.theme-switch-icon {
+  position: absolute;
+  top: 0;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  color: var(--text-muted-55);
+}
+
+.theme-switch-icon-light {
+  left: 0;
+}
+
+.theme-switch-icon-dark {
+  right: 0;
+}
+
+.theme-switch-thumb {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+  transition: transform 0.25s ease, background-color 0.25s ease;
+  z-index: 1;
+}
+
+body.dark .theme-switch-thumb {
+  transform: translateX(28px);
+}
+
+/* Full-track, overlapping hit targets (see navbar.html): only the link for
+   the theme NOT currently active receives pointer events, so a click
+   anywhere on the switch always flips it — not just on one fixed half. */
+.theme-switch-hit {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  border-radius: inherit;
+}
+
+.theme-switch-hit.js-set-theme-light {
+  pointer-events: none;
+}
+
+.theme-switch-hit.js-set-theme-dark {
+  pointer-events: auto;
+}
+
+body.dark .theme-switch-hit.js-set-theme-light {
+  pointer-events: auto;
+}
+
+body.dark .theme-switch-hit.js-set-theme-dark {
+  pointer-events: none;
 }
 
 /* Homepage hero: a short "Welcome" note instead of a big title, using the
@@ -56,7 +260,7 @@
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: $sta-primary;
+  color: var(--accent);
   white-space: nowrap;
 }
 
@@ -64,29 +268,86 @@
   content: "";
   flex: 1 1 auto;
   height: 0;
-  border-top: 1px solid rgba(0, 0, 0, 0.12);
+  border-top: 1px solid var(--hairline);
 }
 
-/* Welcome sentence: a touch larger and darker than body text, since it
-   carries the visual weight the removed <h1> used to. No max-width here —
-   it's one short sentence and should stay on one line on normal screens
-   rather than wrap an orphan word. */
+/* Welcome sentence: sits inside a card, matching the site's other card
+   language (border, radius, soft rest shadow) rather than being styled as
+   an oversized standalone headline. The whole card links to /research/ (see
+   .hero-welcome-card-link, a stretched-link in content/_index.md) except the
+   affiliation links below, which stay independently clickable via a higher
+   z-index — same pattern as .news-card/.pub-card. */
+.hero-welcome-card {
+  position: relative;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border-medium);
+  border-radius: 14px;
+  padding: 1.1rem 1.25rem;
+  box-shadow: var(--shadow-rest);
+  cursor: pointer;
+  transition: background-color 0.25s ease, border-color 0.25s ease, box-shadow 0.15s ease, transform 0.15s ease;
+}
+
+.hero-welcome-card:hover {
+  box-shadow: var(--shadow-hover);
+  transform: translateY(-2px);
+  border-color: var(--accent-border-hover);
+}
+
+.hero-welcome-card-link {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
 .hero-lead p:first-of-type {
-  font-size: 1.2rem;
-  line-height: 1.5;
-  color: #1a1a2e;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--text-strong);
 }
 
 .hero-lead p:first-of-type strong {
-  font-weight: 700;
+  font-weight: 600;
 }
 
-/* Affiliation lines: compact, muted, no underline until hover — a quiet
-   footnote rather than a competing headline. */
-.hero-lead p:last-child {
+/* "Modelling and Theory of Materials Group" links to /research/: same
+   color/weight as plain text until hover, then turns primary blue. */
+.wg-hero .hero-lead p:first-of-type a {
+  color: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  text-decoration: none;
+}
+
+.hero-welcome-card:hover p:first-of-type a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+/* The stretched-link markdown (content/_index.md) ends up in its own
+   trailing <p> (goldmark wraps bare inline HTML in a paragraph), which
+   shifted :last-child to that wrapper instead of the affiliation-links
+   paragraph. Target both real-content paragraphs (:not(:last-child)) so
+   they sit above the stretched-link overlay and stay independently
+   clickable, same pattern as .news-card/.pub-card. */
+.hero-lead p:not(:last-child) {
+  position: relative;
+  z-index: 2;
+}
+
+/* Affiliation lines specifically (the second paragraph): compact, muted, no
+   underline until hover — a quiet footnote rather than a competing headline. */
+.hero-lead p:nth-last-child(2) {
   margin-top: 1.1rem;
   margin-bottom: 0;
   line-height: 1.7;
+}
+
+/* The stretched-link's own auto-wrapped paragraph (last child): no visible
+   content, shouldn't add spacing of its own. */
+.hero-lead p:last-child {
+  margin: 0;
 }
 
 /* Trim the gap to Latest News below — the hero content is short now, it
@@ -102,19 +363,29 @@
 .wg-hero .hero-lead a {
   font-size: 0.9rem;
   font-weight: 600;
-  color: rgba(0, 0, 0, 0.5);
+  color: var(--text-muted-55);
   text-decoration: none;
   transition: color 0.15s ease;
 }
 
 .wg-hero .hero-lead a:hover,
 .wg-hero .hero-lead a:focus {
-  color: $sta-primary;
+  color: var(--accent);
 }
 
-/* Homepage Latest News: no grey band, slightly slicker heading + "see all" link */
-.home-section.no-section-bg {
-  background: transparent;
+/* Homepage Latest News: no grey band, slightly slicker heading + "see all" link.
+   Also target :nth-of-type(even) explicitly (higher specificity than the
+   vendor rule alone) so this can never lose regardless of source order.
+   Explicit var(--page-bg) rather than `transparent`: transparent relies on
+   compositing through to body's background, which — for reasons that don't
+   fully reduce to a specificity explanation — was observed sticking to the
+   old (dark) value after a live light/dark toggle until a full page reload.
+   An explicit, token-driven color paints directly on this element and
+   updates the same reliable way every other var(--token) consumer already
+   does, sidestepping that entirely. */
+.home-section.no-section-bg,
+.home-section.no-section-bg:nth-of-type(even) {
+  background: var(--page-bg);
 }
 
 .no-section-bg .section-heading h1 {
@@ -125,7 +396,7 @@
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: $sta-primary;
+  color: var(--accent);
   white-space: nowrap;
 }
 
@@ -133,14 +404,14 @@
   content: "";
   flex: 1 1 auto;
   height: 0;
-  border-top: 1px solid rgba(0, 0, 0, 0.12);
+  border-top: 1px solid var(--hairline);
 }
 
 .see-all a {
   font-size: 0.85rem;
   font-weight: 600;
   letter-spacing: 0.04em;
-  color: $sta-primary;
+  color: var(--accent);
 }
 
 .see-all i {
@@ -222,7 +493,7 @@
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: $sta-primary;
+  color: var(--accent);
   white-space: nowrap;
 }
 
@@ -230,7 +501,7 @@
   content: "";
   flex: 1 1 auto;
   height: 0;
-  border-top: 1px solid rgba(0, 0, 0, 0.12);
+  border-top: 1px solid var(--hairline);
 }
 
 /* Longer labels (e.g. "Former Members / Postdoctoral Researchers") would
@@ -253,7 +524,7 @@
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: $sta-primary;
+  color: var(--accent);
   white-space: nowrap;
 }
 
@@ -265,7 +536,7 @@
   content: "";
   flex: 1 1 auto;
   height: 0;
-  border-top: 1px solid rgba(0, 0, 0, 0.12);
+  border-top: 1px solid var(--hairline);
 }
 
 /* Some pages (e.g. teaching/ams25) hand-author `# Heading` immediately
@@ -282,7 +553,7 @@
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: $sta-primary;
+  color: var(--accent);
   white-space: nowrap;
 }
 
@@ -291,7 +562,7 @@
   content: "";
   flex: 1 1 auto;
   height: 0;
-  border-top: 1px solid rgba(0, 0, 0, 0.12);
+  border-top: 1px solid var(--hairline);
 }
 
 .article-style > h1:has(+ hr):first-child,
@@ -322,44 +593,44 @@ h1:empty {
 /* People cards: give each person a proper card instead of a bare floating avatar */
 .people-widget .people-person {
   position: relative;
-  background: #fff;
-  border: 1px solid rgba(0, 0, 0, 0.06);
+  background: var(--card-bg);
+  border: 1px solid var(--card-border-soft);
   border-radius: 14px;
   padding: 1.75rem 1rem 1.5rem;
   margin-bottom: 1.5rem;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
-  transition: box-shadow 0.15s ease, transform 0.15s ease;
+  box-shadow: var(--shadow-rest);
+  transition: box-shadow 0.15s ease, transform 0.15s ease, background-color 0.25s ease, border-color 0.25s ease;
 }
 
 .people-widget .network-icon {
   margin-top: 1.1rem;
   padding-top: 1rem;
-  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  border-top: 1px solid var(--card-border-medium);
   justify-content: center;
 }
 
 .people-widget .people-person:hover {
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+  box-shadow: var(--shadow-hover);
   transform: translateY(-3px);
-  border-color: rgba($sta-primary, 0.3);
+  border-color: var(--accent-border-hover);
 }
 
 /* Stronger, more confident name typography (was a thin, easy-to-miss weight) */
 .portrait-title h2 {
   font-weight: 700;
   letter-spacing: -0.01em;
-  color: #1a1a2e;
+  color: var(--text-strong);
 }
 
 /* Name turns primary blue on hover anywhere on the card, matching News/
    Teaching cards, instead of only when the cursor is exactly over the text */
 .people-widget .portrait-title h2 a {
-  color: #1a1a2e;
+  color: var(--text-strong);
   text-decoration: none;
 }
 
 .people-widget .people-person:hover .portrait-title h2 a {
-  color: $sta-primary;
+  color: var(--accent);
   text-decoration: none;
 }
 
@@ -368,11 +639,12 @@ h1:empty {
    reads as "no longer active" at a glance. Individual cards inside stay
    white/normal (see people.html), so they still pop against the panel. */
 .former-members-panel {
-  background: #f5f5fa;
-  border: 1px solid rgba(0, 0, 0, 0.08);
+  background: var(--former-panel-bg);
+  border: 1px solid var(--card-border-medium);
   border-radius: 20px;
   padding: 2rem 1.5rem 0.5rem;
   margin: 3rem 0;
+  transition: background-color 0.25s ease, border-color 0.25s ease;
 }
 
 /* The template's is-first class only marks the very first group overall,
@@ -385,7 +657,7 @@ h1:empty {
 .role-line {
   font-weight: 600;
   font-size: 1.05rem;
-  color: rgba(0, 0, 0, 0.8);
+  color: var(--text-muted-80);
 }
 
 .role-line a {
@@ -393,7 +665,7 @@ h1:empty {
 }
 
 .role-line a:hover {
-  color: $sta-primary;
+  color: var(--accent);
 }
 
 .people-widget .role-line {
@@ -403,7 +675,7 @@ h1:empty {
 /* Soft depth behind every avatar */
 .avatar-circle,
 .avatar-square {
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+  box-shadow: var(--avatar-shadow);
 }
 
 .avatar-square {
@@ -419,7 +691,7 @@ h1:empty {
 #profile .network-icon {
   margin-top: 1.5rem;
   padding-top: 1.25rem;
-  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  border-top: 1px solid var(--card-border-medium);
   justify-content: center;
 }
 
@@ -435,13 +707,13 @@ h1:empty {
   width: 2.25rem;
   height: 2.25rem;
   border-radius: 50%;
-  background-color: rgba($sta-primary, 0.08);
-  color: $sta-primary;
+  background-color: var(--accent-soft-bg);
+  color: var(--accent);
   transition: background-color 0.15s ease, color 0.15s ease, transform 0.15s ease;
 }
 
 .network-icon li a:hover {
-  background-color: $sta-primary;
+  background-color: var(--accent);
   color: #fff;
   transform: translateY(-2px);
 }
@@ -476,11 +748,11 @@ ul.ul-interests {
 ul.ul-interests li {
   padding: 0.4rem 0;
   font-size: 0.92rem;
-  color: rgba(0, 0, 0, 0.75);
+  color: var(--text-muted-75);
 }
 
 ul.ul-interests li:not(:last-child) {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  border-bottom: 1px solid var(--card-border-soft);
 }
 
 /* Small tracked label used for profile subsections: Interests, Education, Latest */
@@ -490,7 +762,7 @@ ul.ul-interests li:not(:last-child) {
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: $sta-primary;
+  color: var(--accent);
 }
 
 /* Education: plain bold course/year, no bullet or icon */
@@ -514,7 +786,7 @@ ul.ul-interests li:not(:last-child) {
 }
 
 .ul-edu .institution {
-  color: rgba(0, 0, 0, 0.55);
+  color: var(--text-muted-55);
   font-size: 0.8rem;
 }
 
@@ -525,30 +797,31 @@ ul.ul-interests li:not(:last-child) {
 }
 
 .profile-card {
-  background-color: #fff;
-  border: 1px solid rgba(0, 0, 0, 0.08);
+  background-color: var(--card-bg);
+  border: 1px solid var(--card-border-medium);
   border-radius: 14px;
   padding: 1.5rem;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+  box-shadow: var(--shadow-rest);
+  transition: background-color 0.25s ease, border-color 0.25s ease;
 }
 
 /* News cards: a proper card instead of a flat grey box with a black border */
 .news-card {
   position: relative;
-  background-color: #fff;
-  border: 1px solid rgba(0, 0, 0, 0.08);
+  background-color: var(--card-bg);
+  border: 1px solid var(--card-border-medium);
   border-radius: 14px;
   padding: 1.5rem;
   margin-bottom: 1.25rem !important;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
-  transition: box-shadow 0.15s ease, transform 0.15s ease, border-color 0.15s ease;
+  box-shadow: var(--shadow-rest);
+  transition: box-shadow 0.15s ease, transform 0.15s ease, border-color 0.15s ease, background-color 0.25s ease;
   cursor: pointer;
 }
 
 .news-card:hover {
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+  box-shadow: var(--shadow-hover);
   transform: translateY(-2px);
-  border-color: rgba($sta-primary, 0.3);
+  border-color: var(--accent-border-hover);
 }
 
 /* The whole card links out via .stretched-link (see compact_grey.html); any
@@ -569,17 +842,17 @@ ul.ul-interests li:not(:last-child) {
 }
 
 .news-card .article-title a {
-  color: #1a1a2e;
+  color: var(--text-strong);
   text-decoration: none;
 }
 
 .news-card:hover .article-title a {
-  color: $sta-primary;
+  color: var(--accent);
   text-decoration: none;
 }
 
 .news-card .stream-meta {
-  color: rgba(0, 0, 0, 0.55);
+  color: var(--text-muted-55);
 }
 
 .news-card img {
@@ -592,7 +865,7 @@ ul.ul-interests li:not(:last-child) {
   position: relative;
   font-size: 0.9rem;
   line-height: 1.6;
-  color: rgba(0, 0, 0, 0.75);
+  color: var(--text-muted-75);
 }
 
 .pub-card .li-cite-author a {
@@ -602,12 +875,12 @@ ul.ul-interests li:not(:last-child) {
 
 .pub-card .pub-title {
   font-weight: 700;
-  color: #00695c;
+  color: var(--pub-title);
   transition: color 0.15s ease;
 }
 
 .pub-card:hover .pub-title {
-  color: $sta-primary;
+  color: var(--accent);
 }
 
 /* Per-year publication numbering, sitting left of each card */
@@ -630,11 +903,135 @@ ul.ul-interests li:not(:last-child) {
   text-align: right;
   font-weight: 700;
   font-size: 0.85rem;
-  color: rgba(0, 0, 0, 0.3);
+  color: var(--text-muted-30);
 }
 
 @media (max-width: 575.98px) {
   .pub-number {
     display: none;
   }
+}
+
+/* AMS25 schedule table: was entirely inline-styled with fixed light-mode
+   hex colors (incl. a JS onmouseover/onmouseout hover), so it stayed pure
+   white/pastel regardless of theme. Moved to classes driven by tokens above
+   — the per-session-type pastels (registration/lecture/break/hands-on/
+   panel) get a dark counterpart with the same hue, just as a low-alpha tint
+   over the dark surface instead of a solid light fill. */
+.schedule-wrap {
+  overflow-x: auto;
+  border-radius: 12px;
+}
+
+.schedule-table {
+  border-collapse: collapse;
+  width: 100%;
+  min-width: 600px;
+  text-align: center;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--shadow-hover);
+}
+
+.schedule-table col.schedule-day {
+  border-left: 1px solid var(--card-border-medium);
+}
+
+.schedule-table thead tr {
+  background: var(--card-bg);
+  color: var(--text-strong);
+  height: 50px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.schedule-table th {
+  border-bottom: 3px solid var(--card-border-medium);
+  padding: 12px;
+  vertical-align: middle;
+}
+
+.schedule-table tbody tr {
+  background: var(--card-bg);
+  transition: background-color 0.2s ease;
+}
+
+.schedule-table tbody tr:hover {
+  background: var(--slot-hover);
+}
+
+.schedule-table td {
+  padding: 10px;
+  vertical-align: middle;
+}
+
+.schedule-table .slot-registration {
+  background: var(--slot-registration);
+}
+
+.schedule-table .slot-lecture {
+  background: var(--slot-lecture);
+}
+
+.schedule-table .slot-empty {
+  background: var(--slot-empty-bg);
+  color: var(--slot-empty-text);
+}
+
+.schedule-table .slot-break {
+  background: var(--slot-break);
+}
+
+.schedule-table .slot-handson {
+  background: var(--slot-handson);
+}
+
+.schedule-table .slot-panel {
+  background: var(--slot-panel);
+}
+
+/* Footer: RBI institutional logo. Kept in its own quiet block above the
+   copyright line — its red/grey/navy palette is intentionally left as-is
+   (a real institutional mark, not something to reskin to the site's own
+   indigo). flex (not text-align) centers it reliably regardless of the
+   anchor's own display type.
+
+   Two logo images (see minimal.html), CSS picks which shows: the original
+   has "IRB" knocked *through* the color blocks as transparent cutouts
+   (renders fine on the light page, revealing white through the cutouts),
+   irb-logo-dark.png is the same artwork flattened so those cutouts are
+   opaque white instead — the transparent version would otherwise vanish
+   into a dark page. */
+.site-footer-affiliation {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.site-footer-affiliation a {
+  display: inline-flex;
+  opacity: 0.92;
+  transition: opacity 0.15s ease;
+}
+
+.site-footer-affiliation a:hover {
+  opacity: 1;
+}
+
+.site-footer-affiliation img {
+  height: 64px;
+  width: auto;
+  display: block;
+}
+
+.site-footer-affiliation .irb-logo-dark {
+  display: none;
+}
+
+body.dark .site-footer-affiliation .irb-logo-light {
+  display: none;
+}
+
+body.dark .site-footer-affiliation .irb-logo-dark {
+  display: block;
 }

@@ -8,7 +8,7 @@
 appearance:
   mode: light
   theme_day: Ocean
-  theme_night:
+  theme_night: Ocean Night
   font: Fira
   font_size: L
 

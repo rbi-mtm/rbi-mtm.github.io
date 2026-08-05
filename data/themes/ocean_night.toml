@@ -1,0 +1,19 @@
+# Theme metadata
+name = "Ocean Night"
+
+[dark]
+  # Primary — indigo, lightened for AA contrast on a dark page
+  primary = "#7986d8"
+
+  # Menu — kept the same indigo as the light theme's menu, so the navbar
+  # bar (and logo/nav-link hover styles) is a constant brand anchor and
+  # doesn't need a separate dark treatment.
+  menu_primary = "#3f51b5"
+  menu_text = "#fff"
+  menu_text_active = "#ffeb3b"
+  menu_title = "#fff"
+
+  # Home sections
+  background = "#15161f"
+  home_section_odd = "#15161f"
+  home_section_even = "#1b1c28"

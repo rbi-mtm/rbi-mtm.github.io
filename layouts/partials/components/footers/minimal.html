@@ -1,0 +1,50 @@
+{{/* LOCAL OVERRIDE: adds the Ruđer Bošković Institute logo above the
+     copyright line — see custom.scss (.site-footer-affiliation) for styling.
+     Two variants, CSS-swapped by theme like the navbar logo: irb-logo.png
+     (original, transparent "IRB" knockout — reads fine on the light page)
+     and irb-logo-dark.png (same artwork flattened so the letters are opaque
+     white instead of transparent — the knockout would otherwise disappear
+     against a dark page). Rest of this file is unmodified vendor content. */}}
+{{ $irb_logo_light := resources.Get "media/irb-logo.png" }}
+{{ $irb_logo_dark := resources.Get "media/irb-logo-dark.png" }}
+{{ if $irb_logo_light }}
+  {{ $irb_logo_light = $irb_logo_light.Resize "x140" }}
+  {{ $irb_logo_dark = $irb_logo_dark.Resize "x140" }}
+<div class="site-footer-affiliation">
+  <a href="https://www.irb.hr/eng" target="_blank" rel="noopener">
+    <img class="irb-logo-light" src="{{ $irb_logo_light.RelPermalink }}" alt="Ruđer Bošković Institute" width="{{ $irb_logo_light.Width }}" height="{{ $irb_logo_light.Height }}">
+    <img class="irb-logo-dark" src="{{ $irb_logo_dark.RelPermalink }}" alt="Ruđer Bošković Institute" width="{{ $irb_logo_dark.Width }}" height="{{ $irb_logo_dark.Height }}">
+  </a>
+</div>
+{{ end }}
+
+{{ if .IsTranslated | and site.Params.footer.show_translations }}
+<div class="powered-by d-flex flex-wrap pb-2 justify-content-center">
+  <div class="p-2 font-weight-bold"><i class="fas fa-globe pr-1" aria-hidden="true"></i>{{ i18n "languages" }}:</div>
+  <div class="p-2">{{ index site.Data.i18n.languages .Lang }}</div>
+  {{ range .Translations }}
+  <div class="p-2"><a href="{{ .Permalink }}">{{ index site.Data.i18n.languages .Lang }}</a></div>
+  {{ end }}
+</div>
+{{ end }}
+
+{{ if or (site.GetPage "/terms.md") (site.GetPage "/privacy.md") }}
+<p class="powered-by">
+  {{ with site.GetPage "/privacy.md" }}
+  {{ printf "<a href=\"%s\">%s</a>" .RelPermalink .Title | safeHTML }}
+  {{ end }}
+  {{ with site.GetPage "/terms.md" }}
+  {{ if site.GetPage "/privacy.md" }} &middot; {{ end }}
+  {{ printf "<a href=\"%s\">%s</a>" .RelPermalink .Title | safeHTML }}
+  {{ end }}
+</p>
+{{ end }}
+
+{{ with site.Params.footer.text }}
+<p class="powered-by">
+  {{ . | markdownify | emojify }}
+</p>
+{{ end }}
+
+{{/* Display copyright license. */}}
+{{ partial "site_footer_license" . }}

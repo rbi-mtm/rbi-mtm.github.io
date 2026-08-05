@@ -9,6 +9,41 @@
     <meta name="generator" content="Hugo Blox Builder {{ site.Data.hugoblox.version }}" />
   {{ end }}
 
+  {{/* Between unloading one page and painting the next, browsers default to
+       a plain white canvas regardless of any CSS, since nothing has loaded
+       yet — invisible in light mode, but a visible white flash on dark-mode
+       page navigations. A CSS-only @media(prefers-color-scheme) rule only
+       covers OS-level dark preference, not an explicit choice made via the
+       on-site toggle (stored in localStorage) — so this runs an inline,
+       blocking script as early as physically possible (before any other
+       tag) that checks localStorage the same way wowchemy-theming.js does,
+       and paints the canvas dark immediately if needed, before the browser
+       has anything else to paint. */}}
+  <style>
+    /* Target body too, not just html: the base stylesheet gives body its
+       own opaque white background, which paints over html's background
+       the moment body exists — setting html alone doesn't survive that.
+       This selector works without any JS on body itself, since body
+       inherits the already-set class from its ancestor <html> the instant
+       it's style-calculated, and beats the vendor's plain `body{...}` rule
+       on specificity regardless of source order. */
+    html.dark-preload,
+    html.dark-preload body {
+      background: #15161f;
+    }
+  </style>
+  <script>
+    (function () {
+      try {
+        var mode = parseInt(localStorage.getItem('wcTheme') || '2', 10);
+        var isDark = mode === 1 || (mode === 2 && window.matchMedia('(prefers-color-scheme: dark)').matches);
+        if (isDark) {
+          document.documentElement.classList.add('dark-preload');
+        }
+      } catch (e) {}
+    })();
+  </script>
+
   {{/* EXTENSIBILITY HOOK: HEAD-START */}}
   {{ partial "blox-core/functions/get_hook" (dict "hook" "head-start" "context" .) }}
 
@@ -25,8 +60,14 @@
   {{ with ($scr.Get "google_fonts") }}
     {{ if hasPrefix . "family=" }}
       {{/* If `google_fonts` starts with "family=", use API v2 (https://developers.google.com/fonts/docs/css2) */}}
-      <link rel="preload" as="style" {{ printf "href=\"https://fonts.googleapis.com/css2?%s&display=swap\"" . | safeHTMLAttr }}>
-      <link rel="stylesheet" {{ printf "href=\"https://fonts.googleapis.com/css2?%s&display=swap\"" . | safeHTMLAttr }} media="print" onload="this.media='all'">
+      {{/* Loaded render-blocking rather than the theme's default media="print"
+           onload="this.media='all'" trick, same reasoning as vendor-bundle.css
+           in this file: while this stylesheet is gated behind the async swap,
+           body text has no matching @font-face yet and renders in a fallback
+           font, which can visibly delay/re-flow text on slower connections.
+           A brief block on this one small stylesheet is a better trade than
+           text appearing to lag behind on every page load. */}}
+      <link rel="stylesheet" {{ printf "href=\"https://fonts.googleapis.com/css2?%s&display=swap\"" . | safeHTMLAttr }}>
     {{ else }}
       {{ errorf "There is a new version of Google Fonts. Learn how to upgrade your font pack at https://docs.hugoblox.com/customization/#custom-font" }}
     {{ end }}

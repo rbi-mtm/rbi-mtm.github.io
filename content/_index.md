@@ -11,10 +11,16 @@ sections:
       text: |
         ###### Welcome
 
-        This is the homepage of the **Modelling and Theory of Materials Group**.
+        <div class="hero-welcome-card">
+
+        This is the homepage of the **[Modelling and Theory of Materials Group](/research/)**.
 
         [@ The Division of Theoretical Physics](https://www.irb.hr/eng/Divisions/Division-of-Theoretical-Physics)  
         [@ Ruđer Bošković Institute](https://www.irb.hr/eng)
+
+        <a href="/research/" class="hero-welcome-card-link" aria-label="Modelling and Theory of Materials Group"></a>
+
+        </div>
 #      image:
 #        filename: atom.png
 

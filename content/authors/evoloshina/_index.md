@@ -1,7 +1,7 @@
 ---
 # Display name
 title: Elena Voloshina
-priority: 10
+priority: 5
 
 # Full Name (for SEO)
 first_name: Elena

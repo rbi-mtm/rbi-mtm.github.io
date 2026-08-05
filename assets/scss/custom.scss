@@ -27,6 +27,7 @@
   --accent: #{$sta-primary};
   --accent-border-hover: #{rgba($sta-primary, 0.3)};
   --accent-soft-bg: #{rgba($sta-primary, 0.08)};
+  --link-hover: #{darken($sta-primary, 15%)};
   --former-panel-bg: #f5f5fa;
   --pub-title: #00695c;
   --slot-registration: #d8bce8;
@@ -56,6 +57,7 @@ body.dark {
   --accent: #8f9aff;
   --accent-border-hover: rgba(143, 154, 255, 0.45);
   --accent-soft-bg: rgba(143, 154, 255, 0.18);
+  --link-hover: var(--accent);
   --former-panel-bg: rgba(255, 255, 255, 0.04);
   --pub-title: #4fd1c5;
   --slot-registration: rgba(216, 188, 232, 0.16);
@@ -112,6 +114,30 @@ body.theme-ready {
   background-color: var(--page-bg) !important;
 }
 
+/* Bootstrap's .navbar-collapse doesn't grow to fill the bar (flex-basis:
+   auto, no flex-grow) — it only sizes to its own content. Since .nav-icons
+   (search/theme/etc.) now lives inside it (see navbar.html, for the mobile
+   dropdown fix), its ml-md-auto would otherwise only reach the right edge
+   of .navbar-collapse's own content-sized box, leaving the whole menu+icons
+   cluster shoved left with dead space after it. Force it to fill the
+   remaining bar width at lg+ so ml-md-auto still reaches the bar's true
+   right edge, same as before .nav-icons moved. */
+@include media-breakpoint-up(lg) {
+  .navbar-collapse {
+    flex-grow: 1;
+  }
+}
+
+/* Vendor hardcodes the hamburger icon to white (.navbar-light .navbar-toggler
+   and .dark .navbar-toggler both set color:#fff) — a leftover from when the
+   bar had a solid indigo background. Now that the bar follows var(--page-bg)
+   (light or dark), white-on-white in light mode was invisible; only dark
+   mode happened to still work. Same token as the nav links, so it tracks
+   both themes automatically. */
+.navbar-toggler {
+  color: var(--text-muted-80) !important;
+}
+
 /* Two logo images (see navbar.html), CSS picks which shows: light ink for
    the light-theme bar, light-colored ink for the dark-theme bar. A single
    logo can't have enough contrast against both. */
@@ -158,6 +184,20 @@ body.dark .navbar-brand .navbar-logo-dark {
 .navbar .navbar-nav .nav-link.active {
   background-color: var(--accent-soft-bg);
   color: var(--accent) !important;
+}
+
+/* .nav-icons (search/theme/social/language) now lives inside
+   .navbar-collapse (see navbar.html) so it folds into the mobile hamburger
+   dropdown instead of overlapping the top bar. Below the lg breakpoint it
+   stacks below the text menu items rather than sitting flush against them —
+   give it a hairline separator and some breathing room there; ml-md-auto
+   already handles the lg+ right-alignment on the navbar row. */
+@include media-breakpoint-down(md) {
+  .navbar-collapse .nav-icons {
+    margin-top: 0.5rem;
+    padding-top: 0.75rem;
+    border-top: 1px solid var(--hairline);
+  }
 }
 
 /* Theme toggle: a real sliding switch (sun | moon) instead of a dropdown.
@@ -456,6 +496,19 @@ body.dark .theme-switch-hit.js-set-theme-dark {
 .article-style p {
   text-align: justify;
   font-size: 0.90rem; /* Slightly smaller than normal */
+}
+
+/* Inline links within prose (bios, Research/Teaching page text, etc.): the
+   vendor sets `.article-style a { text-decoration: inherit; }`, which
+   suppresses the underline that would otherwise appear on hover. In light
+   mode the rest-state link color (vendor's generic `a { color: $sta-primary }`)
+   is identical to --accent, so hovering to --accent was a visual no-op —
+   --link-hover is a distinctly darker shade there. In dark mode the rest
+   color is white, so --accent is already distinct and --link-hover just
+   points at it. */
+.article-style a:hover {
+  color: var(--link-hover);
+  font-weight: 600;
 }
 
 .article-style ul,
@@ -857,6 +910,29 @@ ul.ul-interests li:not(:last-child) {
 
 .news-card img {
   border-radius: 10px;
+}
+
+/* Below ~tablet width the vendor's default side-by-side layout (image column
+   fixed at 80-150px) squeezes the title/summary into a narrow left column.
+   Stack instead: image becomes a full-width banner below the summary, text
+   gets the full card width. */
+@media (max-width: 768px) {
+  .news-card.stream-item {
+    flex-direction: column;
+  }
+
+  .news-card.stream-item .ml-3 {
+    margin-left: 0 !important;
+    margin-top: 1rem;
+  }
+
+  .news-card.stream-item .ml-3 img {
+    width: 100%;
+    max-width: none;
+    height: auto;
+    max-height: 180px;
+    object-fit: cover;
+  }
 }
 
 /* Publication cards: same card language as News, whole card clicks through to

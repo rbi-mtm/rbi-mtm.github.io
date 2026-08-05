@@ -114,20 +114,6 @@ body.theme-ready {
   background-color: var(--page-bg) !important;
 }
 
-/* Bootstrap's .navbar-collapse doesn't grow to fill the bar (flex-basis:
-   auto, no flex-grow) — it only sizes to its own content. Since .nav-icons
-   (search/theme/etc.) now lives inside it (see navbar.html, for the mobile
-   dropdown fix), its ml-md-auto would otherwise only reach the right edge
-   of .navbar-collapse's own content-sized box, leaving the whole menu+icons
-   cluster shoved left with dead space after it. Force it to fill the
-   remaining bar width at lg+ so ml-md-auto still reaches the bar's true
-   right edge, same as before .nav-icons moved. */
-@include media-breakpoint-up(lg) {
-  .navbar-collapse {
-    flex-grow: 1;
-  }
-}
-
 /* Vendor hardcodes the hamburger icon to white (.navbar-light .navbar-toggler
    and .dark .navbar-toggler both set color:#fff) — a leftover from when the
    bar had a solid indigo background. Now that the bar follows var(--page-bg)
@@ -190,14 +176,29 @@ body.dark .navbar-brand .navbar-logo-dark {
    .navbar-collapse (see navbar.html) so it folds into the mobile hamburger
    dropdown instead of overlapping the top bar. Below the lg breakpoint it
    stacks below the text menu items rather than sitting flush against them —
-   give it a hairline separator and some breathing room there; ml-md-auto
-   already handles the lg+ right-alignment on the navbar row. */
+   give it a hairline separator and some breathing room there; the parent
+   .navbar-collapse's justify-content-end (see navbar.html) already handles
+   the lg+ right-alignment on the navbar row. */
 @include media-breakpoint-down(md) {
   .navbar-collapse .nav-icons {
     margin-top: 0.5rem;
     padding-top: 0.75rem;
     border-top: 1px solid var(--hairline);
   }
+}
+
+/* Vertically center every icon (search, theme switch, language globe) on
+   the same axis: without this, each item's cross-axis position depends on
+   its own content's natural line-height/box height, so the search icon
+   (an <i> glyph in a plain nav-link) and the theme switch (a 28px-tall
+   custom box) drift a couple of px apart instead of sharing a center. */
+.nav-icons {
+  align-items: center;
+}
+
+.nav-icons .nav-link {
+  display: flex;
+  align-items: center;
 }
 
 /* Theme toggle: a real sliding switch (sun | moon) instead of a dropdown.

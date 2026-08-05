@@ -153,8 +153,14 @@
              menu on mobile, while staying inline on the navbar row at the
              lg+ breakpoint (where .navbar-collapse itself is always
              expanded) — same visual result on desktop, no more overlap on
-             mobile. */}}
-        <ul class="nav-icons navbar-nav flex-row ml-md-auto d-flex pl-md-2">
+             mobile. No ml-auto here: .navbar-collapse already gets
+             justify-content-end from site.Params.header.navbar.align (see
+             above), which right-aligns both <ul>s as one cluster. An
+             ml-auto margin on this <ul> would absorb all the row's free
+             space itself, leaving none for justify-content-end to push the
+             *other* <ul> (the menu tabs) with — which is exactly what
+             snapped the tabs back to the left edge when this was tried. */}}
+        <ul class="nav-icons navbar-nav flex-row d-flex pl-md-2">
 
           {{/* Display any social links that the superuser chose to display in the header. */}}
           {{ range where (where (where site.Pages "Section" "authors") ".Params.superuser" true) ".Params.social" "!=" nil }}

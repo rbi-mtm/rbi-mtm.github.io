@@ -38,6 +38,12 @@
   --slot-handson: #dff2d8;
   --slot-panel: #a2f5ee;
   --slot-hover: #f0f8ff;
+  --callout-note-text: #12537e;
+  --callout-note-bg: #f6fbfe;
+  --callout-note-border: #1976d2;
+  --callout-warning-text: #cd0930;
+  --callout-warning-bg: #fff5f7;
+  --callout-warning-border: #ff3860;
 }
 
 body.dark {
@@ -68,6 +74,36 @@ body.dark {
   --slot-handson: rgba(140, 210, 140, 0.16);
   --slot-panel: rgba(110, 220, 210, 0.18);
   --slot-hover: rgba(255, 255, 255, 0.06);
+  --callout-note-text: #bfe0fb;
+  --callout-note-bg: rgba(25, 118, 210, 0.14);
+  --callout-note-border: #5da8e8;
+  --callout-warning-text: #ffb3c1;
+  --callout-warning-bg: rgba(255, 56, 96, 0.12);
+  --callout-warning-border: #ff6b85;
+}
+
+/* Callout/aside boxes: vendor hardcodes light-theme-only colors, so redefine
+   them here from the tokens above to stay readable in dark mode too. */
+.article-style aside,
+.alert-note {
+  color: var(--callout-note-text);
+  background-color: var(--callout-note-bg);
+  border-color: var(--callout-note-border);
+}
+
+.alert-warning {
+  color: var(--callout-warning-text);
+  background-color: var(--callout-warning-bg);
+  border-color: var(--callout-warning-border);
+}
+
+.article-style aside p::before,
+div.alert > div:first-child::before {
+  color: var(--callout-note-border);
+}
+
+div.alert-warning > div:first-child::before {
+  color: var(--callout-warning-border);
 }
 
 /* Smooth theme switch: background crossfades instead of snapping. The local

@@ -433,10 +433,12 @@ body.dark .theme-switch-hit.js-set-theme-dark {
 /* The stretched-link markdown (content/_index.md) ends up in its own
    trailing <p> (goldmark wraps bare inline HTML in a paragraph), which
    shifted :last-child to that wrapper instead of the affiliation-links
-   paragraph. Target both real-content paragraphs (:not(:last-child)) so
-   they sit above the stretched-link overlay and stay independently
-   clickable, same pattern as .news-card/.pub-card. */
-.hero-lead p:not(:last-child) {
+   paragraph. Lift only the <a> elements inside the real-content paragraphs
+   above the stretched-link overlay (not the whole <p> — a block-level
+   paragraph spans the full card width, so elevating it would shadow the
+   overlay over empty space too, leaving those areas unclickable). Same
+   pattern as .news-card/.pub-card, applied to the link itself. */
+.hero-lead p:not(:last-child) a {
   position: relative;
   z-index: 2;
 }

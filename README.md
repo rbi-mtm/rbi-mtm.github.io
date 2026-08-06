@@ -16,6 +16,45 @@ Website of the Modelling and Theory of Materials Group, built with [Hugo](https:
 
 Most changes (adding people, news, publications, teaching entries) just mean adding or editing a Markdown file under `content/`. Copy an existing entry of the same type as a template.
 
+### Adding a news post
+
+Create `content/post/<date>-<slug>/index.md`, e.g. `content/post/26-01-15-new-paper/index.md`:
+
+```markdown
+---
+title: We published a new paper!
+date: 2026-01-15
+---
+
+_A one-sentence teaser shown on the news list._
+
+<!--more-->
+
+The rest of the post goes here.
+```
+
+### Adding a publication
+
+Create `content/publication/<slug>/index.md`, e.g. `content/publication/lastname-2026-topic/index.md`. Authors are matched by profile folder name (e.g. `iloncaric`) when the person has a profile, otherwise just write their full name:
+
+```markdown
+---
+title: Title of the paper
+authors:
+- Full Name
+- iloncaric
+date: '2026-01-15'
+publication_types:
+- article-journal
+publication: '*Journal Name*'
+doi: 'https://doi.org/xxxx'
+---
+```
+
+### Editing a profile
+
+Each person has a folder under `content/authors/<username>/_index.md`, e.g. `content/authors/iloncaric/_index.md`. Edit fields like `role`, `bio`, `social`, `user_groups`, or the bio text below the `---` frontmatter directly. To add a new person, copy an existing author folder (including their `avatar.*` image) and update the frontmatter.
+
 ## Preview locally
 
 ```

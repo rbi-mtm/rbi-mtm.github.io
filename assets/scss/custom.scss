@@ -768,6 +768,13 @@ h1:empty {
 #profile.profile-card {
   padding: 1.75rem 1.5rem;
   text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+@media (min-width: 992px) {
+  #profile.profile-card {
+    margin-bottom: 0;
+  }
 }
 
 #profile .network-icon {

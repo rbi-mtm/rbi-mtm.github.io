@@ -79,6 +79,6 @@ His main scientific interest is the modelling of materials from first principles
 He mainly relies on density functional theory and often combines it with machine learning.
 He worked on various classes of materials, including molecular crystals, catalytic processes on metal surfaces, properties and stability of hybrid halide perovskites, and others.  To date, he has published over 60 scientific papers.
 He has led and participated in several scientific projects of the Croatian Science Foundation as well as projects funded by the European Union.
-So far, he has supervised two defended doctoral theses and seven master's theses.
+So far, he has supervised three defended doctoral theses and seven master's theses.
 He is the recipient of the State Award for Science (2020) and the Outstanding Award for the Best Doctoral Thesis in
 2016/2017 of the University of the Basque Country.

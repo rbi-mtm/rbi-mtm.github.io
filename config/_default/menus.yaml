@@ -25,6 +25,9 @@ main:
   - name: News
     url: post
     weight: 6
+  - name: Opportunities
+    url: opportunities
+    weight: 7
   - name: Contact
     url: contact
-    weight: 7
+    weight: 8

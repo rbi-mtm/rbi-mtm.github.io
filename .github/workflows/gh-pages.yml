@@ -94,6 +94,43 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./public
+      - name: Build for mtm.irb.hr
+        run: |
+          hugo \
+            --gc \
+            --minify \
+            --baseURL "https://mtm.irb.hr/" \
+            --destination "${{ runner.temp }}/mtm-public" \
+            --cacheDir "${{ runner.temp }}/hugo_cache"
+
+          test -s "${{ runner.temp }}/mtm-public/index.html"
+      - name: Configure SSH for MTM deployment
+        env:
+          MTM_SSH_PRIVATE_KEY: ${{ secrets.MTM_SSH_PRIVATE_KEY }}
+          MTM_SSH_KNOWN_HOSTS: ${{ secrets.MTM_SSH_KNOWN_HOSTS }}
+        run: |
+          install -d -m 700 "$HOME/.ssh"
+          umask 077
+
+          printf '%s\n' "$MTM_SSH_PRIVATE_KEY" \
+            > "$HOME/.ssh/mtm_deploy"
+
+          printf '%s\n' "$MTM_SSH_KNOWN_HOSTS" \
+            > "$HOME/.ssh/mtm_known_hosts"
+      - name: Deploy to mtm.irb.hr
+        run: |
+          rsync -rlptz \
+            --delete-delay \
+            --delay-updates \
+            --chmod=D755,F644 \
+            -e "ssh -i $HOME/.ssh/mtm_deploy -o IdentitiesOnly=yes -o BatchMode=yes -o StrictHostKeyChecking=yes -o UserKnownHostsFile=$HOME/.ssh/mtm_known_hosts -o ConnectTimeout=15" \
+            "${{ runner.temp }}/mtm-public/" \
+            mtm-deploy@mtm.irb.hr:./
+      - name: Remove deployment SSH files
+        if: always()
+        run: |
+          rm -f "$HOME/.ssh/mtm_deploy" \
+                "$HOME/.ssh/mtm_known_hosts"
   deploy:
     environment:
       name: github-pages

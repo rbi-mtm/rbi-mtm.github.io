@@ -1,0 +1,23 @@
+{{ define "main" }}
+<article class="article">
+  <div class="full-width-bg">
+    <div class="article-container"><h1>{{ .Title }}</h1></div>
+  </div>
+  <div class="article-container project-detail">
+    <div class="article-style">{{ .Content }}</div>
+    {{ with .Params.publications }}
+      <h2>Related publications</h2>
+      {{ range $i, $path := . }}
+        {{ with site.GetPage (printf "/publication/%s" $path) }}
+          <div class="pub-row"><div class="pub-number">{{ add $i 1 }}</div>{{ partial "views/citation" (dict "item" .) }}</div>
+        {{ else }}{{ errorf "Project publication not found: %s" $path }}{{ end }}
+      {{ end }}
+    {{ end }}
+    {{ with .Params.other_publications }}
+      {{ if not $.Params.publications }}<h2>Related publications</h2>{{ end }}
+      {{ range . }}<div class="pub-row"><div class="pub-number"></div><div class="pub-list-item view-citation news-card pub-card">{{ . | markdownify }}</div></div>{{ end }}
+    {{ end }}
+    {{ if and (not .Params.publications) (not .Params.other_publications) }}<h2>Related publications</h2><p>No related publications are currently listed in CroRIS.</p>{{ end }}
+  </div>
+</article>
+{{ end }}

@@ -1185,3 +1185,13 @@ body.dark .site-footer-affiliation .irb-logo-light {
 body.dark .site-footer-affiliation .irb-logo-dark {
   display: block;
 }
+
+/* Project cards share the Teaching and Publications card styles. */
+.project-pi {
+  margin: 0.3rem 0;
+  font-size: 0.9rem;
+  color: var(--text-muted-75);
+}
+.project-detail .project-translation {
+  margin: 2rem 0;
+}

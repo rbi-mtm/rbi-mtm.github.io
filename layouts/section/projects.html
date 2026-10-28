@@ -1,0 +1,17 @@
+{{ define "main" }}
+<div class="universal-wrapper pt-4">
+  {{ range $i, $group := (slice (dict "status" "active" "title" "Active Projects") (dict "status" "completed" "title" "Completed Projects")) }}
+    <div class="group-heading{{ if eq $i 0 }} is-first{{ end }}"><h2>{{ $group.title }}</h2></div>
+    {{ range where $.Pages.ByDate.Reverse "Params.status" $group.status }}
+      <div class="media stream-item view-compact news-card">
+        <div class="media-body">
+          <div class="section-subheading article-title mb-0 mt-0"><a href="{{ .RelPermalink }}">{{ .Title }}</a></div>
+          <div class="project-pi">{{ .Params.leader_label | default "Principal investigator" }}: {{ .Params.pi }}</div>
+          <div class="article-style">{{ .Params.summary }}</div>
+        </div>
+        <a href="{{ .RelPermalink }}" class="stretched-link" aria-label="View {{ .Title }}"></a>
+      </div>
+    {{ end }}
+  {{ end }}
+</div>
+{{ end }}

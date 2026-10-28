@@ -18,8 +18,8 @@ publications:
   - mladineo-2025-illustrating
   - erhardt-2025-electron
   - mladineo-2025-photoinduced
+  - wood-2026-best-csp
 other_publications:
-  - 'Wood, W. P., et al. (2026). **BEST-CSP Benchmark Study of Polymorphs I and II of Sulfamerazine and the Perils of Polytype Polymorphs**. *Crystal Growth & Design*, 26, 476–493. [DOI](https://doi.org/10.1021/acs.cgd.5c01406).'
   - 'Lončarić, I. (2021). **Modelling dynamics of molecules on surfaces**. EUROMAT 2021.'
   - 'Lončarić, I. (2021). **Modelling Dynamics of CO at Metal Surfaces**.'
   - 'Lončarić, I. (2021). **Modelling dynamics of CO at Metal Surfaces**. Mini-symposium on Surface Science and Dynamics, Potsdam.'

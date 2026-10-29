@@ -19,7 +19,7 @@ It is possible to understand, explain and predict physical phenomena related to 
 # Research Interests
 ---
 
-Our group develops and applies first-principles and machine-learning-based atomistic simulations - including density functional theory, ab initio molecular dynamics, many-body/quasiparticle methods, and machine-learned interatomic potentials - to understand, predict, and design the properties of materials.
+Our group develops and applies first-principles and machine-learning-based atomistic simulations — including density functional theory, ab initio molecular dynamics, many-body/quasiparticle methods, and machine-learned interatomic potentials — to understand, predict, and design the properties of materials.
 
 Within this shared methodological foundation, individual members pursue a variety of particular research directions, including:
 

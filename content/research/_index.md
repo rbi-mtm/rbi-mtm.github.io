@@ -28,5 +28,6 @@ Within this shared methodological foundation, individual members pursue a variet
 - **Magnetism and multiferroics** — magnetic ordering, proximity effects, and magnetoelectric coupling in layered and molecular materials.
 - **Molecular crystals and mechanochemistry** — polymorphism, thermosalient effects, and mechanochemical reaction pathways.
 - **Machine learning for materials** — interatomic potentials, crystal structure prediction, and data-driven property screening.
+- **Adiabatic perturbation theory** — transport phenomena, electron-phonon coupling, and quantum geometry.
 
 For a full account of our work, see our [Publications](/publication/), or visit [People](/people/) to learn more about individual members' research.

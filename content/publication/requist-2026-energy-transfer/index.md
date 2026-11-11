@@ -2,7 +2,7 @@
 title: Adiabatic perturbation theory of energy transfer and charge transport in condensed matter
 authors:
 - rrequist
-- Fran Dabo
+- fdabo
 date: '2026-08-13'
 publication_types:
 - article
